@@ -1,6 +1,6 @@
 import { footerItems } from "@/data/footerItems";
-import Link from "next/link";
 import React from "react";
+import { LinkPreview } from "./ui/link-preview";
 
 export default function Footer() {
   return (
@@ -17,13 +17,13 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {footerItem.items.map(({ title, link, icon }, id) => (
                     <li key={id}>
-                      <Link
-                        href={link}
+                      <LinkPreview
+                        url={link}
                         className="flex justify-start items-start text-sm"
                       >
                         {icon && <i className="mr-2 mt-1">{icon}</i>}
                         {title}
-                      </Link>
+                      </LinkPreview>
                     </li>
                   ))}
                 </ul>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="w-full text-center">
-          Copyright © {new Date().getFullYear()} | All Rights Reserved | <Link href="/">CureGreen.com</Link>
+          Copyright © {new Date().getFullYear()} | All Rights Reserved | <LinkPreview url="https://github.com/Prasundas99">CureGreen.com</LinkPreview>
         </p>
       </footer>
     </>
