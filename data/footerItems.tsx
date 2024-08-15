@@ -1,15 +1,7 @@
-import { ReactElement } from "react";
+import { footerItem } from "@/lib/definitions";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { GoMention } from "react-icons/go";
 import { ImTarget } from "react-icons/im";
-
-type footerLinks = {
-  title: string;
-  link: string;
-  icon?: ReactElement;
-};
-
-type footerItem = { head: string; items: footerLinks[] };
 
 export const footerItems: footerItem[] = [
   {
