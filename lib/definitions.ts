@@ -3,6 +3,7 @@ import { ReactElement, ReactNode } from "react";
 export type products = {
   id: number;
   name: string;
+  shortDesc?: string,
   link: string;
   rating?: number;
   image: string;

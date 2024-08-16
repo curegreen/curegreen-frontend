@@ -4,24 +4,32 @@ export const Products: products[] = [
   {
     id: 1,
     name: "Residential Solar",
+    shortDesc:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/residential-solar",
     image: "/images/dummyPic.jpeg",
   },
   {
     id: 2,
     name: "Hot Water System",
+    shortDesc:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/hot-water-system",
     image: "/images/dummyPic.jpeg",
   },
   {
     id: 3,
     name: "Split Air Conditioner",
+    shortDesc:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/split-air-conditioner",
     image: "/images/dummyPic.jpeg",
   },
   {
     id: 4,
     name: "Free Products",
+    shortDesc:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/free-products",
     image: "/images/dummyPic.jpeg",
   },
