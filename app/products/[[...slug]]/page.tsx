@@ -47,7 +47,6 @@ export default function Page({ params }: { params: { slug: string[] } }) {
           <ProductDetailsPage
             sizeOfSlug={slug.length}
             product={product}
-            productDetails={product}
           />
         );
       }
