@@ -2,12 +2,21 @@ import { ReactElement, ReactNode } from "react";
 
 export type products = {
   id: number;
+  slug: string,
   name: string;
+  isCategory: boolean;
   shortDesc?: string,
   link: string;
   rating?: number;
   image: string;
-  pdfLink?: string,
+  description?: string;
+  sizes?: sizes[];
+  howItWorks?: [img: string, desc: string];
+  rebate?: [img: string, desc: string];
+  whyUpgrade?: [img: string, desc: ReactNode];
+  category?: products[];
+  gallery?: string[];
+  features?: string;
 };
 
 export type sizes = {
@@ -17,16 +26,6 @@ export type sizes = {
   system: string;
   image: string;
   pdfLink: string;
-};
-
-export type productDetails = {
-  id: number;
-  description?: string;
-  sizes?: sizes[];
-  howItWorks?: [img: string, desc: string];
-  rebate?: [img: string, desc: string];
-  whyUpgrade?: [img: string, desc: ReactNode];
-  freeProducts?: products[];
 };
 
 export type footerLinks = {

@@ -1,79 +1,149 @@
-import { productDetails, products } from "@/lib/definitions";
+import { products } from "@/lib/definitions";
+
+export const ShowerHeads: products[] = [
+  {
+    id: 1,
+    slug: "square-shower-head",
+    name: "Square Shower Head",
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/shower-heads/square-shower-head",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    slug: "simple-shower-head",
+    name: "Shower Heads",
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/shower-heads/simple-shower-head",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+];
+export const DoorSeals: products[] = [
+  {
+    id: 1,
+    slug: "bottom-door-seal",
+    name: "Bottom Door Seal",
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/door-seals/bottom-door-seal",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    slug: "frame-door-seal",
+    name: "Frame Door Seal",
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/door-seals/frame-door-seal",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+];
+
+
+export const FreeProducts: products[] = [
+  {
+    id: 1,
+    slug: "cooling-vent-covers",
+    name: "Cooling Vent Covers",
+    rating: 3.5,
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/cooling-vent-covers",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    slug: "shower-heads",
+    name: "Shower Heads",
+    rating: 3.5,
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/shower-heads",
+    isCategory: true,
+    category: ShowerHeads,
+  },
+  {
+    id: 3,
+    slug: "door-seals",
+    name: "Door Seals (Bottom & Frame)",
+    rating: 3.5,
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/door-seals",
+    isCategory: true,
+    category: DoorSeals,
+  },
+  {
+    id: 4,
+    slug: "in-home-display-service",
+    name: "In-Home Display Service",
+    rating: 3.5,
+    image: "/images/dummyPic.jpeg",
+    link: "/free-products/in-home-display-service",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    features: "some feats",
+    gallery: [
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+      "/images/dummyPic.jpeg",
+    ],
+  },
+];
 
 export const Products: products[] = [
   {
     id: 1,
+    slug: "residential-solar",
     name: "Residential Solar",
     shortDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/residential-solar",
     image: "/images/dummyPic.jpeg",
-  },
-  {
-    id: 2,
-    name: "Hot Water System",
-    shortDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link: "/hot-water-system",
-    image: "/images/dummyPic.jpeg",
-  },
-  {
-    id: 3,
-    name: "Split Air Conditioner",
-    shortDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link: "/split-air-conditioner",
-    image: "/images/dummyPic.jpeg",
-  },
-  {
-    id: 4,
-    name: "Free Products",
-    shortDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link: "/free-products",
-    image: "/images/dummyPic.jpeg",
-  },
-];
-
-export const FreeProducts: products[] = [
-  {
-      id: 1,
-      name: "Cooling Vent Covers",
-      rating: 3.5,
-      image: "/images/dummyPic.jpeg",
-      link: "/free-products/cooling-vent-covers",
-      pdfLink: "/cooling-vent-covers.pdf"
-  },
-  {
-      id: 2,
-      name: "Shower Heads",
-      rating: 3.5,
-      image: "/images/dummyPic.jpeg",
-      link: "/free-products/shower-heads",
-      pdfLink: "/shower-heads.pdf",
-  },
-  {
-      id: 3,
-      name: "Door Seals (Bottom & Frame)",
-      rating: 3.5,
-      image: "/images/dummyPic.jpeg",
-      link: "/free-products/door-seals",
-      pdfLink: "/door-seals.pdf",
-  },
-  {
-      id: 4,
-      name: "In-Home Display Service",
-      rating: 3.5,
-      image: "/images/dummyPic.jpeg",
-      link: "/free-products/in-home-display-service",
-      pdfLink: "/in-home-display-service.pdf",
-  },
-]
-
-export const ProductDetails: productDetails[] = [
-  {
-    id: 1,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     sizes: [
       {
         size: "Small",
@@ -102,10 +172,19 @@ export const ProductDetails: productDetails[] = [
     ],
     howItWorks: ["/images/dummyPic.jpeg", "How it works"],
     rebate: ["/images/dummyPic.jpeg", "Rebate"],
+    isCategory: false,
   },
   {
     id: 2,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    slug: "hot-water-system",
+    name: "Hot Water System",
+    shortDesc:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    link: "/hot-water-system",
+    image: "/images/dummyPic.jpeg",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     sizes: [
       {
         size: "Small",
@@ -137,7 +216,15 @@ export const ProductDetails: productDetails[] = [
   },
   {
     id: 3,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    slug: "split-air-conditioner",
+    name: "Split Air Conditioner",
+    shortDesc:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    link: "/split-air-conditioner",
+    image: "/images/dummyPic.jpeg",
+    isCategory: false,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     sizes: [
       {
         size: "Small",
@@ -168,6 +255,13 @@ export const ProductDetails: productDetails[] = [
   },
   {
     id: 4,
-    freeProducts:FreeProducts,
-  }
+    slug: "free-products",
+    name: "Free Products",
+    shortDesc:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    link: "/free-products",
+    image: "/images/dummyPic.jpeg",
+    isCategory: true,
+    category: FreeProducts,
+  },
 ];

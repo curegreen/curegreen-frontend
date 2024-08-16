@@ -3,12 +3,13 @@ import { products } from "@/lib/definitions";
 import { DirectionAwareHover } from "./ui/direction-aware-hover";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Products } from "@/data/products";
 
 export default function ProductsArchive({
-  items,
+  items = Products,
   free = false,
 }: {
-  items: products[];
+  items?: products[];
   free?: boolean;
 }) {
   return (
@@ -26,7 +27,7 @@ export default function ProductsArchive({
         </div>
 
         <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {items.map(({ id, name, rating, image, link, pdfLink }) => (
+          {items.map(({ id, name, image, link }) => (
             <div key={id} className="bg-neutral-100 rounded-md">
               <div className="relative flex items-center justify-center">
                 <DirectionAwareHover imageUrl={image}>
@@ -38,22 +39,7 @@ export default function ProductsArchive({
                 <h4 className="mt-2 capitalize font-bold text-xl text-black">
                   {name}
                 </h4>
-                {rating && <div className="rating">{rating}</div>}
                 <div className="flex justify-around items-center">
-                  {pdfLink && (
-                    <Link
-                      href={pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant={"default"}
-                        className="bg-green-600 text-white hover:bg-green-900"
-                      >
-                        Enquiry
-                      </Button>
-                    </Link>
-                  )}
                   <Link href={`/products/${link}`}>
                     <Button
                       variant={"outline"}
