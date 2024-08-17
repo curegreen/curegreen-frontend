@@ -60,7 +60,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
 
   return (
     <>
-      <div className="mt-32 mb-20 px-5 sm:px-10">
+      <div className="mt-40 mb-20 px-5 sm:px-10">
         <div className="mb-6">
           <Breadcrumbs currentPath={currentPath} />
         </div>

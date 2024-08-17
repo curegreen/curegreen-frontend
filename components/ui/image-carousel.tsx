@@ -12,6 +12,7 @@ export default function ImageCarousel({
       <ImageGallery
         items={gallery}
         lazyLoad
+        showNav={false}
         showPlayButton={false}
         showFullscreenButton={false}
         thumbnailPosition="left"

@@ -201,6 +201,47 @@ export const FreeProducts: products[] = [
   },
 ];
 
+export const AirConditioners: products[] = [
+  {
+    id: 1,
+    slug: "split-air-system",
+    name: "Split Air System",
+    image: "/images/dummyPic.jpeg",
+    isCategory: false,
+    sizes: [
+      {
+        size: "Single",
+        houseSize: "For Residential Houses",
+        image: "/images/dummyPic.jpeg",
+      },
+      {
+        size: "Multi",
+        houseSize: "For Residential Houses",
+        image: "/images/dummyPic.jpeg",
+      },
+    ],
+  },
+  {
+    id: 2,
+    slug: "refrigerated-cooling-system",
+    name: "Refrigerated Cooling System",
+    image: "/images/dummyPic.jpeg",
+    isCategory: false,
+    sizes: [
+      {
+        size: "Single",
+        houseSize: "For Residential Houses",
+        image: "/images/dummyPic.jpeg",
+      },
+      {
+        size: "Multi",
+        houseSize: "For Residential Houses",
+        image: "/images/dummyPic.jpeg",
+      },
+    ],
+  },
+];
+
 export const Products: products[] = [
   {
     id: 1,
@@ -219,7 +260,6 @@ export const Products: products[] = [
         inverter: "5 kW",
         system: "6.6 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/small.pdf",
       },
       {
         size: "Medium",
@@ -227,7 +267,6 @@ export const Products: products[] = [
         inverter: "8 kW",
         system: "10 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/medium.pdf",
       },
       {
         size: "Large",
@@ -235,7 +274,6 @@ export const Products: products[] = [
         inverter: "10-15 kW",
         system: "13-20 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/large.pdf",
       },
     ],
     howItWorks: ["/images/dummyPic.jpeg", "How it works"],
@@ -260,7 +298,6 @@ export const Products: products[] = [
         inverter: "5 kW",
         system: "6.6 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/small.pdf",
       },
       {
         size: "Medium",
@@ -268,7 +305,6 @@ export const Products: products[] = [
         inverter: "8 kW",
         system: "10 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/medium.pdf",
       },
       {
         size: "Large",
@@ -276,7 +312,6 @@ export const Products: products[] = [
         inverter: "10-15 kW",
         system: "13-20 kW",
         image: "/images/dummyPic.jpeg",
-        pdfLink: "/large.pdf",
       },
     ],
     howItWorks: ["/images/dummyPic.jpeg", "How it works"],
@@ -284,41 +319,16 @@ export const Products: products[] = [
   },
   {
     id: 3,
-    slug: "split-air-conditioner",
-    name: "Split Air Conditioner",
+    slug: "air-conditioner-system",
+    name: "Air Conditioning System",
     shortDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "/split-air-conditioner",
     image: "/images/dummyPic.jpeg",
-    isCategory: false,
+    isCategory: true,
+    category: AirConditioners,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    sizes: [
-      {
-        size: "Small",
-        houseSize: "Small to medium",
-        inverter: "5 kW",
-        system: "6.6 kW",
-        image: "/images/dummyPic.jpeg",
-        pdfLink: "/small.pdf",
-      },
-      {
-        size: "Medium",
-        houseSize: "Large",
-        inverter: "8 kW",
-        system: "10 kW",
-        image: "/images/dummyPic.jpeg",
-        pdfLink: "/medium.pdf",
-      },
-      {
-        size: "Large",
-        houseSize: "Farm",
-        inverter: "10-15 kW",
-        system: "13-20 kW",
-        image: "/images/dummyPic.jpeg",
-        pdfLink: "/large.pdf",
-      },
-    ],
     whyUpgrade: ["/images/dummyPic.jpeg", "Why upgrade"],
   },
   {

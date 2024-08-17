@@ -7,7 +7,7 @@ export type products = {
   name: string;
   isCategory: boolean;
   shortDesc?: string,
-  link: string;
+  link?: string;
   image: string;
   optionalGallery?: genericGallery[],
   description?: string;
@@ -28,10 +28,9 @@ export type genericGallery = {
 export type sizes = {
   size: string;
   houseSize: string;
-  inverter: string;
-  system: string;
+  inverter?: string;
+  system?: string;
   image: string;
-  pdfLink: string;
 };
 
 export type footerLinks = {
