@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex bg-secondary-white min-h-screen flex-col items-center justify-between">
       {/* Home Background Image */}
-      <div className="md:mt-32 mb-16 relative w-full h-[50rem] overflow-hidden">
+      <div className="md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-hidden">
         <Image
           src={homeBg}
           alt="Landscape image"
@@ -55,6 +55,9 @@ export default function Home() {
         <ProductsArchive className="mb-16" />
 
         <div className="h-full p-2 mb-16">
+          <h2 className="font-heading text-5xl text-secondary-black text-center mb-8 md:mb-14">
+            How It Works
+          </h2>
           <Tabs defaultValue="residential-solar" className="w-full">
             <TabsList className="w-full rounded-md bg-neutral-200 p-1 mb-8">
               {products.map(({ id, slug, name }) => (

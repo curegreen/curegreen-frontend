@@ -35,7 +35,7 @@ function Navbar({
   return (
     <div className={cn("fixed top-0 inset-x-0 w-full mx-auto z-50", className)}>
       <Menu setActive={setActive}>
-        <div className="w-full flex justify-center md:justify-between py-2 mt-0 md:px-16 items-center bg-primary-green text-white">
+        <div className="w-full flex justify-center md:justify-between py-2.5 mt-0 md:px-16 items-center bg-primary-green text-white">
           <div className="md:flex justify-center items-center gap-3 hidden">
             <p>Contact for knowing more details</p>
             <span>
