@@ -42,10 +42,10 @@ function Navbar({
               <FaArrowRightLong />
             </span>
           </div>
-          <div className="flex justify-center items-center gap-5">
-            <div className="flex justify-center items-center gap-3">
+          <div className="flex justify-center items-center gap-1 md:gap-5">
+            <div className="flex justify-center items-center md:gap-3 gap-1 text-xs md:text-md">
               <span>
-                <FaPhoneVolume />
+                <FaPhoneVolume className="hidden sm:block" />
               </span>
               <div className="flex justify-center items-center">
                 <Link href={"tel:0426722199"}>0426722199</Link>
@@ -58,9 +58,9 @@ function Navbar({
               className="flex justify-center items-center gap-1"
             >
               <span>
-                <GoMention />
+                <GoMention className="hidden sm:block" />
               </span>
-              <p>infogreen@gmail.com</p>
+              <p className="text-xs md:text-md">infogreen@gmail.com</p>
             </Link>
           </div>
         </div>
