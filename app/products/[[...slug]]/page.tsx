@@ -7,7 +7,6 @@ import ProductDetailsPage from "@/components/product-detail";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
-  console.log(slug);
   const currentPath = slug?.length
     ? `/products/${slug.join("/")}`
     : "/products";

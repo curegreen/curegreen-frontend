@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode } from "react";
+import { ReactImageGalleryItem } from "react-image-gallery";
 
 export type products = {
   id: number;
@@ -7,17 +8,22 @@ export type products = {
   isCategory: boolean;
   shortDesc?: string,
   link: string;
-  rating?: number;
   image: string;
+  optionalGallery?: genericGallery[],
   description?: string;
   sizes?: sizes[];
   howItWorks?: [img: string, desc: string];
   rebate?: [img: string, desc: string];
   whyUpgrade?: [img: string, desc: ReactNode];
   category?: products[];
-  gallery?: string[];
+  gallery?: ReactImageGalleryItem[];
   features?: string;
 };
+
+export type genericGallery = {
+  imgUrl: string,
+  width: string,
+}
 
 export type sizes = {
   size: string;

@@ -19,9 +19,16 @@ export default function ProductsArchive({
           <h2 className="text-5xl font-bold capitalize mb-4">
             {free ? "free products" : "products"}
           </h2>
-          {free && (
+          {free ? (
             <p>
               There are government approved products for saving energy for free
+            </p>
+          ) : (
+            <p>
+              CureGreen offers a range of eco-friendly products, including
+              advanced solar panels, hot water systems, and air purifiers
+              designed to promote sustainability and enhance the quality of life
+              for residential setups
             </p>
           )}
         </div>
@@ -40,6 +47,16 @@ export default function ProductsArchive({
                   {name}
                 </h4>
                 <div className="flex justify-around items-center">
+                  {free && (
+                    <Link href={"#"}>
+                      <Button
+                        variant={"default"}
+                        className="bg-green-500 hover:bg-green-600"
+                      >
+                        Enquiry
+                      </Button>
+                    </Link>
+                  )}
                   <Link href={`/products/${link}`}>
                     <Button
                       variant={"outline"}

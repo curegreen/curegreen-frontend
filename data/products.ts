@@ -12,10 +12,22 @@ export const ShowerHeads: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
   {
@@ -29,13 +41,26 @@ export const ShowerHeads: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
 ];
+
 export const DoorSeals: products[] = [
   {
     id: 1,
@@ -48,10 +73,22 @@ export const DoorSeals: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
   {
@@ -65,21 +102,31 @@ export const DoorSeals: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
 ];
-
 
 export const FreeProducts: products[] = [
   {
     id: 1,
     slug: "cooling-vent-covers",
     name: "Cooling Vent Covers",
-    rating: 3.5,
     image: "/images/dummyPic.jpeg",
     link: "/free-products/cooling-vent-covers",
     isCategory: false,
@@ -87,17 +134,28 @@ export const FreeProducts: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
   {
     id: 2,
     slug: "shower-heads",
     name: "Shower Heads",
-    rating: 3.5,
     image: "/images/dummyPic.jpeg",
     link: "/free-products/shower-heads",
     isCategory: true,
@@ -107,7 +165,6 @@ export const FreeProducts: products[] = [
     id: 3,
     slug: "door-seals",
     name: "Door Seals (Bottom & Frame)",
-    rating: 3.5,
     image: "/images/dummyPic.jpeg",
     link: "/free-products/door-seals",
     isCategory: true,
@@ -117,7 +174,6 @@ export const FreeProducts: products[] = [
     id: 4,
     slug: "in-home-display-service",
     name: "In-Home Display Service",
-    rating: 3.5,
     image: "/images/dummyPic.jpeg",
     link: "/free-products/in-home-display-service",
     isCategory: false,
@@ -125,10 +181,22 @@ export const FreeProducts: products[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     features: "some feats",
     gallery: [
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
-      "/images/dummyPic.jpeg",
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
+      {
+        original: "/images/dummyPic.jpeg",
+        thumbnail: "/images/dummyPic.jpeg",
+      },
     ],
   },
 ];
