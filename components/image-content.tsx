@@ -1,37 +1,40 @@
+import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
+import { ReactImageGalleryItem } from "react-image-gallery";
+import ImageCarousel from "./ui/image-carousel";
 
 export default function ImageContentBlock({
   header,
   content,
   images,
   imagePosition,
+  className,
 }: {
   header?: string;
   content: string | ReactNode;
-  images: string[] | string;
+  images: ReactImageGalleryItem[] | string;
   imagePosition: "left" | "right";
+  className?: string;
 }) {
-  const imageArray = Array.isArray(images) ? images : [images];
+  const imageArray = Array.isArray(images) ? images : [{ original: images }];
 
   return (
     <div
-      className={`flex flex-col items-center md:flex-row w-full ${
-        imagePosition === "right" ? "md:flex-row-reverse" : ""
-      }`}
+      className={cn(
+        `flex flex-col items-center w-full gap-4 lg:gap-20 ${
+          imagePosition === "right" ? "md:flex-row" : "md:flex-row-reverse"
+        }`,
+        className
+      )}
     >
       <div className="w-full md:w-1/2 p-2.5">
-        {header && <h2 className="text-2xl font-bold mb-4">{header}</h2>}
+        {header && (
+          <h2 className="text-5xl font-bold font-heading mb-4">{header}</h2>
+        )}
         {typeof content === "string" ? <p>{content}</p> : content}
       </div>
       <div className="w-full md:w-1/2 p-2.5">
-        {imageArray.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`image-${index}`}
-            className="w-full h-auto mb-4 last:mb-0"
-          />
-        ))}
+        <ImageCarousel gallery={imageArray} />
       </div>
     </div>
   );

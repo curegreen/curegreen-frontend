@@ -5,7 +5,7 @@ export default function PaidProduct() {
   return (
     <>
       <div className="min-h-screen flex flex-col items-start w-full px-5 sm:px-10">
-        <ImageContentBlock
+        {/* <ImageContentBlock
           header="About Us"
           content={
             <>
@@ -27,7 +27,7 @@ export default function PaidProduct() {
           }
           images={"/images/image.png"}
           imagePosition="left"
-        />
+        /> */}
       </div>
     </>
   );

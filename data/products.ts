@@ -276,8 +276,14 @@ export const Products: products[] = [
         image: "/images/dummyPic.jpeg",
       },
     ],
-    howItWorks: ["/images/dummyPic.jpeg", "How it works"],
-    rebate: ["/images/dummyPic.jpeg", "Rebate"],
+    howItWorks: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "How it works",
+    },
+    rebate: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "Rebate",
+    },
     isCategory: false,
   },
   {
@@ -314,8 +320,14 @@ export const Products: products[] = [
         image: "/images/dummyPic.jpeg",
       },
     ],
-    howItWorks: ["/images/dummyPic.jpeg", "How it works"],
-    whyUpgrade: ["/images/dummyPic.jpeg", "Why upgrade"],
+    howItWorks: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "How it works",
+    },
+    whyUpgrade: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "Why upgrade",
+    },
   },
   {
     id: 3,
@@ -329,7 +341,14 @@ export const Products: products[] = [
     category: AirConditioners,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    whyUpgrade: ["/images/dummyPic.jpeg", "Why upgrade"],
+    howItWorks: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "How it works",
+    },
+    whyUpgrade: {
+      img: [{ original: "/images/dummyPic.jpeg" }],
+      desc: "Why upgrade",
+    },
   },
   {
     id: 4,

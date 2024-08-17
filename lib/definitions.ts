@@ -3,27 +3,27 @@ import { ReactImageGalleryItem } from "react-image-gallery";
 
 export type products = {
   id: number;
-  slug: string,
+  slug: string;
   name: string;
   isCategory: boolean;
-  shortDesc?: string,
+  shortDesc?: string;
   link?: string;
   image: string;
-  optionalGallery?: genericGallery[],
+  optionalGallery?: genericGallery[];
   description?: string;
   sizes?: sizes[];
-  howItWorks?: [img: string, desc: string];
-  rebate?: [img: string, desc: string];
-  whyUpgrade?: [img: string, desc: ReactNode];
+  howItWorks?: { img: ReactImageGalleryItem[]; desc: ReactNode };
+  rebate?: { img: ReactImageGalleryItem[]; desc: ReactNode };
+  whyUpgrade?: { img: ReactImageGalleryItem[]; desc: ReactNode };
   category?: products[];
   gallery?: ReactImageGalleryItem[];
   features?: string;
 };
 
 export type genericGallery = {
-  imgUrl: string,
-  width: string,
-}
+  imgUrl: string;
+  width: string;
+};
 
 export type sizes = {
   size: string;

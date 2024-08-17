@@ -2,27 +2,35 @@ import React, { Fragment } from "react";
 import { products } from "@/lib/definitions";
 import { Products } from "@/data/products";
 import ProductCard from "./ui/product-card";
+import { cn } from "@/lib/utils";
 
 export default function ProductsArchive({
   items = Products,
   free = false,
+  className,
 }: {
   items?: products[];
   free?: boolean;
+  className?: string;
 }) {
   return (
     <>
-      <div className="min-h-screen flex flex-col items-start w-full px-5 sm:px-10">
+      <div
+        className={cn(
+          "min-h-screen flex flex-col items-start w-full px-5",
+          className
+        )}
+      >
         <div className="flex flex-col items-start text-black dark:text-white mb-8">
-          <h2 className="text-5xl font-bold capitalize mb-4">
+          <h2 className="text-5xl font-bold font-heading capitalize mb-4">
             {free ? "free products" : "products"}
           </h2>
           {free ? (
-            <p>
+            <p className="font-body">
               There are government approved products for saving energy for free
             </p>
           ) : (
-            <p>
+            <p className="font-body w-full md:w-1/2">
               CureGreen offers a range of eco-friendly products, including
               advanced solar panels, hot water systems, and air purifiers
               designed to promote sustainability and enhance the quality of life

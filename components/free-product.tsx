@@ -18,7 +18,7 @@ export default function FreeProduct({ product }: { product: products }) {
         <div className="w-full flex flex-col md:flex-row justify-center items-start gap-5">
           {/* left col */}
           <div className="w-full md:w-1/2 py-4 sm:pr-20">
-            {gallery && <ImageCarousel gallery={gallery} />}
+            {gallery && <ImageCarousel gallery={gallery} showNav={false} thumbnailPosition="left" />}
           </div>
 
           {/* right col */}

@@ -1,7 +1,7 @@
 "use client";
 import React, { Fragment, useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
-import { cn } from "@/lib/utils";
+import { cn, scrollToSection } from "@/lib/utils";
 import { Button } from "./ui/button";
 import {
   FaArrowRightLong,
@@ -35,7 +35,7 @@ function Navbar({
   return (
     <div className={cn("fixed top-0 inset-x-0 w-full mx-auto z-50", className)}>
       <Menu setActive={setActive}>
-        <div className="w-full flex justify-center md:justify-between py-2 mt-0 md:px-16 items-center bg-green-500 text-white">
+        <div className="w-full flex justify-center md:justify-between py-2 mt-0 md:px-16 items-center bg-primary-green text-white">
           <div className="md:flex justify-center items-center gap-3 hidden">
             <p>Contact for knowing more details</p>
             <span>
@@ -69,7 +69,13 @@ function Navbar({
             <Image src={headerLogo} alt={headerLogo} width={250} height={20} />
           </HoveredLink>
           <div className="flex items-center justify-center space-x-4 md:space-x-16">
-            <HoveredLink href="/about">About Us</HoveredLink>
+            <HoveredLink
+              href="/#about"
+              scroll={false}
+              onClick={() => scrollToSection("about")}
+            >
+              About Us
+            </HoveredLink>
             <MenuItem
               setActive={setActive}
               active={active}
@@ -95,7 +101,7 @@ function Navbar({
               </div>
             </MenuItem>
             <HoveredLink href="/quote">
-              <Button className="bg-blue-700 hover:bg-blue-900">
+              <Button className="bg-primary-blue hover:bg-secondary-darkBlue">
                 Get a Quote
               </Button>
             </HoveredLink>

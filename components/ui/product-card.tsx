@@ -19,7 +19,7 @@ export default function ProductCard({image, name, free, link}: {image: string, n
             <Link href={"#"}>
               <Button
                 variant={"default"}
-                className="bg-green-500 hover:bg-green-600"
+                className="bg-primary-green hover:bg-secondary-lightGreen"
               >
                 Enquiry
               </Button>
