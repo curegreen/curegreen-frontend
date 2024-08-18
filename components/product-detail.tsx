@@ -12,5 +12,5 @@ export default function ProductDetailsPage({
 }) {
   const { id, slug, name, isCategory, shortDesc, link, image, description, sizes, howItWorks, rebate, whyUpgrade, category, gallery, features } = product;
   if (sizeOfSlug > 1) return <FreeProduct product={product} />;
-  else return <PaidProduct />
+  else return <PaidProduct product={product} />
 }

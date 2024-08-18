@@ -1,5 +1,7 @@
+import { z } from "zod";
 import { ReactElement, ReactNode } from "react";
 import { ReactImageGalleryItem } from "react-image-gallery";
+import { SubmitHandler } from "react-hook-form";
 
 export type products = {
   id: number;
@@ -40,3 +42,22 @@ export type footerLinks = {
 };
 
 export type footerItem = { head: string; items: footerLinks[] };
+
+export type formFieldConfig = {
+  name: string;
+  label: string;
+  type: "text" | "email" | "tel" | "select" | "textarea" | "number";
+  placeholder?: string;
+  options?: { value: string; label: string }[];
+  validation?: z.ZodTypeAny;
+  className?: string;
+  isReadOnly?: boolean;
+  value?: string | number;
+};
+
+export type formProps = {
+  fields: formFieldConfig[];
+  onSubmit: SubmitHandler<Record<string, any>>;
+  submitBtnValue: string;
+  prefilledValues?: Record<string, string | number>;
+}

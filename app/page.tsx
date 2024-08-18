@@ -84,7 +84,7 @@ export default function Home() {
                     <ImageContentBlock
                       content={howItWorks?.desc}
                       images={howItWorks?.img}
-                      imagePosition={id % 2 == 0 ? "left" : "right"}
+                      imagePosition={id % 2 !== 0 ? "left" : "right"}
                     />
                   )}
                 </TabsContent>

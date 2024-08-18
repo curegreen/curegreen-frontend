@@ -4,13 +4,10 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
+
 export default function FreeProduct({ product }: { product: products }) {
-  const {
-    name,
-    description,
-    gallery,
-    features,
-  } = product;
+  const { name, description, gallery, features } = product;
+
   return (
     <>
       <div className="min-h-screen flex flex-col items-start w-full px-5 sm:px-10">
@@ -18,7 +15,13 @@ export default function FreeProduct({ product }: { product: products }) {
         <div className="w-full flex flex-col md:flex-row justify-center items-start gap-5">
           {/* left col */}
           <div className="w-full md:w-1/2 py-4 sm:pr-20">
-            {gallery && <ImageCarousel gallery={gallery} showNav={false} thumbnailPosition="left" />}
+            {gallery && (
+              <ImageCarousel
+                gallery={gallery}
+                showNav={false}
+                thumbnailPosition="left"
+              />
+            )}
           </div>
 
           {/* right col */}
