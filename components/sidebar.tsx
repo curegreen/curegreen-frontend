@@ -47,19 +47,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
         animate={isOpen ? "visible" : "hidden"}
         variants={listVariants}
       >
-        <motion.div variants={itemVariants} className="bg-secondary p-2 flex justify-start items-center rounded">
+        <motion.div variants={itemVariants} className="bg-secondary flex justify-start items-center rounded">
           <Link
-            href="#about"
-            className="block text-lg font-semibold hover:text-primary-green transition-colors pl-2"
+            href="/#about"
+            className="w-full p-2 text-lg font-semibold hover:text-primary-green transition-colors pl-2"
             onClick={() => toggleDrawer(false)}
           >
             About Us
           </Link>
         </motion.div>
-        <motion.div variants={itemVariants} className="bg-secondary p-2 flex justify-start items-center rounded">
+        <motion.div variants={itemVariants} className="bg-secondary flex justify-start items-center rounded">
           <Link
             href="/products"
-            className="block text-lg font-semibold hover:text-primary-green transition-colors pl-2"
+            className="w-full p-2  text-lg font-semibold hover:text-primary-green transition-colors pl-2"
             onClick={() => toggleDrawer(false)}
           >
             Products

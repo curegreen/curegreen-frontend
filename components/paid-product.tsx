@@ -59,9 +59,9 @@ export default function PaidProduct({ product }: { product: products }) {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-start w-full px-5">
+      <div className="min-h-screen flex flex-col items-start w-full">
         {/* hero */}
-        <div className="w-full bg-secondary-white flex flex-col md:flex-row justify-center items-center gap-5 mb-16">
+        <div className="w-full bg-white flex flex-col md:flex-row justify-center items-center gap-5 mb-16">
           <div className="w-full md:w-2/3 h-full min-h-96 flex flex-col items-start p-10 space-y-10">
             <h4 className="font-heading text-2xl font-bold">
               Under Victoria&apos;s Energy Upgrade Program
@@ -118,7 +118,7 @@ export default function PaidProduct({ product }: { product: products }) {
               />
             )}
           </div>
-          <div className="w-3/4">
+          <div className="w-full md:w-3/4">
             {isCategory && category && (
               <Tabs defaultValue={category[0].slug} className="w-full">
                 <TabsList className="w-full rounded-md bg-neutral-200 p-1 mb-8">
@@ -126,7 +126,7 @@ export default function PaidProduct({ product }: { product: products }) {
                     <Fragment key={slug + id}>
                       <TabsTrigger
                         value={slug}
-                        className="w-1/2 capitalize data-[state=active]:border-2 data-[state=active]:border-b-2 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading text-lg data-[state=active]:text-primary-green data-[state=active]:border-b-primary-green"
+                        className="w-1/2 capitalize data-[state=active]:border-2 data-[state=active]:border-b-2 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg data-[state=active]:text-primary-green data-[state=active]:border-b-primary-green"
                       >
                         {name}
                       </TabsTrigger>
@@ -136,7 +136,7 @@ export default function PaidProduct({ product }: { product: products }) {
                 {category.map(({ id, slug, name, sizes }) => (
                   <Fragment key={slug + id}>
                     <TabsContent value={slug} className="px-5">
-                      <div className="w-full flex flex-col sm:flex-row justify-evenly items-center flex-wrap gap-10">
+                      <div className="w-full flex flex-col sm:flex-row justify-evenly items-center gap-10">
                         {sizes && (
                           <SizeCard
                             sizes={sizes}
@@ -154,13 +154,15 @@ export default function PaidProduct({ product }: { product: products }) {
         </div>
 
         {howItWorks && (
-          <ImageContentBlock
-            header={howItWorks.header}
-            content={howItWorks.desc}
-            images={howItWorks.img}
-            imagePosition="right"
-            className="mb-16 px-12"
-          />
+          <div className="bg-white w-full mb-16 py-4">
+            <ImageContentBlock
+              header={howItWorks.header}
+              content={howItWorks.desc}
+              images={howItWorks.img}
+              imagePosition="right"
+              className="mb-16 px-12"
+            />
+          </div>
         )}
 
         {stats && (
@@ -174,23 +176,26 @@ export default function PaidProduct({ product }: { product: products }) {
         )}
 
         {rebate && (
-          <ImageContentBlock
-            header={rebate.header}
-            content={rebate.desc}
-            images={rebate.img}
-            imagePosition="right"
-            className="mb-16 px-12"
-          />
+          <div className="bg-white w-full py-4 mb-16">
+            <ImageContentBlock
+              header={rebate.header}
+              content={rebate.desc}
+              images={rebate.img}
+              imagePosition="right"
+              className="px-12"
+            />
+          </div>
         )}
-
         {whyUpgrade && (
-          <ImageContentBlock
-            header={whyUpgrade.header}
-            content={whyUpgrade.desc}
-            images={whyUpgrade.img}
-            imagePosition="right"
-            className="mb-16 px-12"
-          />
+          <div className="bg-white w-full py-4 mb-16">
+            <ImageContentBlock
+              header={whyUpgrade.header}
+              content={whyUpgrade.desc}
+              images={whyUpgrade.img}
+              imagePosition="right"
+              className="px-12"
+            />
+          </div>
         )}
       </div>
     </>

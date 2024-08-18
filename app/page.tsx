@@ -58,13 +58,13 @@ export default function Home() {
           <h2 className="font-heading text-5xl text-secondary-black text-center mb-8 md:mb-14">
             How It Works
           </h2>
-          <Tabs defaultValue="residential-solar" className="w-full">
+          <Tabs defaultValue={products[0].slug} className="w-full">
             <TabsList className="w-full rounded-md bg-neutral-200 p-1 mb-8">
               {products.map(({ id, slug, name }) => (
                 <Fragment key={id}>
                   <TabsTrigger
                     value={slug}
-                    className={`w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading text-lg ${
+                    className={`w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg ${
                       id === 1
                         ? "data-[state=active]:text-primary-yellow data-[state=active]:border-b-primary-yellow"
                         : id === 2

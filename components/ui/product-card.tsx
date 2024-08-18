@@ -3,15 +3,27 @@ import { DirectionAwareHover } from "./direction-aware-hover";
 import Link from "next/link";
 import { Button } from "./button";
 
-export default function ProductCard({image, name, free, link}: {image: string, name: string, free: boolean, link?: string}) {
+export default function ProductCard({
+  image,
+  name,
+  free,
+  link,
+}: {
+  image: string;
+  name: string;
+  free: boolean;
+  link?: string;
+}) {
   return (
     <div className="bg-white rounded-md">
-      <div className="relative flex items-center justify-center">
-        <DirectionAwareHover imageUrl={image}>
-          <p className="font-bold text-xl">Something Faltu</p>
-          <p className="font-normal text-sm">Description of Faltu</p>
-        </DirectionAwareHover>
-      </div>
+      <Link href={`/products/${link}`}>
+        <div className="relative flex items-center justify-center">
+          <DirectionAwareHover imageUrl={image}>
+            <p className="font-bold text-xl">Something Faltu</p>
+            <p className="font-normal text-sm">Description of Faltu</p>
+          </DirectionAwareHover>
+        </div>
+      </Link>
       <div className="px-4 space-y-2 pb-4">
         <h4 className="mt-2 capitalize font-bold text-xl text-black">{name}</h4>
         <div className="flex justify-around items-center">
