@@ -15,7 +15,7 @@ export const footerItems: footerItem[] = [
       { title: "Cooling Vent Covers", link: "https://github.com/Prasundas99" },
       { title: "Shower Heads", link: "https://github.com/Prasundas99" },
       { title: "Door seals", link: "https://github.com/Prasundas99" },
-      { title: "In-home Display Service", link: "https://github.com/Prasundas99" },
+      { title: "In-home Display Service", link: "https://github.com/Prasundas99" }, 
     ],
   },
 ];
