@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 export default function SizeCard({
   sizes,
   title,
-  className,
+  btnClassName,
 }: {
   sizes: sizes[];
   title: string;
-  className?: string;
+  btnClassName?: string;
 }) {
   return (
     <>
@@ -37,16 +37,16 @@ export default function SizeCard({
               )}
               {system && (
                 <p>
-                  System: <strong>{system}</strong>
+                  System <strong>{system}</strong>
                 </p>
               )}
-              <div className="flex justify-around items-center">
+              <div className="flex justify-center md:justify-start items-center">
                 <Link href={"#"}>
                   <Button
                     variant={"default"}
-                    className={cn("bg-green-500 hover:bg-green-600", className)}
+                    className={cn("bg-green-500 hover:bg-green-600", btnClassName)}
                   >
-                    Enquiry
+                    Get Quote
                   </Button>
                 </Link>
               </div>

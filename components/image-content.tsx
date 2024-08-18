@@ -10,7 +10,7 @@ export default function ImageContentBlock({
   imagePosition,
   className,
 }: {
-  header?: string;
+  header?: string | ReactNode;
   content: string | ReactNode;
   images: ReactImageGalleryItem[] | string;
   imagePosition: "left" | "right";
@@ -29,7 +29,7 @@ export default function ImageContentBlock({
     >
       <div className="w-full md:w-1/2 p-2.5">
         {header && (
-          <h2 className="text-5xl font-bold font-heading mb-4">{header}</h2>
+          <div className="text-5xl font-bold font-heading mb-4">{header}</div>
         )}
         {typeof content === "string" ? <p>{content}</p> : content}
       </div>

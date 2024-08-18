@@ -10,7 +10,7 @@ export default function FreeProduct({ product }: { product: products }) {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-start w-full px-5 sm:px-10">
+      <div className="min-h-screen flex flex-col items-start w-full px-5 md:px-16">
         <h2 className="text-5xl font-bold capitalize mb-4">{name}</h2>
         <div className="w-full flex flex-col md:flex-row justify-center items-start gap-5">
           {/* left col */}

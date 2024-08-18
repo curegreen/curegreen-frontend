@@ -10,7 +10,6 @@ export default function ProductDetailsPage({
   sizeOfSlug: number;
   product: products;
 }) {
-  const { id, slug, name, isCategory, shortDesc, link, image, description, sizes, howItWorks, rebate, whyUpgrade, category, gallery, features } = product;
   if (sizeOfSlug > 1) return <FreeProduct product={product} />;
   else return <PaidProduct product={product} />
 }

@@ -7,23 +7,25 @@ import { cn } from "@/lib/utils";
 export default function ProductsArchive({
   items = Products,
   free = false,
+  header,
   className,
 }: {
   items?: products[];
   free?: boolean;
+  header?: string;
   className?: string;
 }) {
   return (
     <>
       <div
         className={cn(
-          "min-h-screen flex flex-col items-start w-full px-5",
+          "min-h-screen flex flex-col items-start w-full px-5 md:px-16",
           className
         )}
       >
         <div className="flex flex-col items-start text-black dark:text-white mb-8">
           <h2 className="text-5xl font-bold font-heading capitalize mb-4">
-            {free ? "free products" : "products"}
+            {free ? "free products" : header ? <>{header}</> : "products"}
           </h2>
           {free ? (
             <p className="font-body">

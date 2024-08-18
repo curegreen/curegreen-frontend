@@ -6,6 +6,7 @@ import { SubmitHandler } from "react-hook-form";
 export type products = {
   id: number;
   slug: string;
+  serviceType: boolean;
   name: string;
   isCategory: boolean;
   shortDesc?: string;
@@ -14,9 +15,10 @@ export type products = {
   optionalGallery?: genericGallery[];
   description?: string;
   sizes?: sizes[];
-  howItWorks?: { img: ReactImageGalleryItem[]; desc: ReactNode };
-  rebate?: { img: ReactImageGalleryItem[]; desc: ReactNode };
-  whyUpgrade?: { img: ReactImageGalleryItem[]; desc: ReactNode };
+  howItWorks?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
+  rebate?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
+  stats?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
+  whyUpgrade?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
   category?: products[];
   gallery?: ReactImageGalleryItem[];
   features?: string;

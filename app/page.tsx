@@ -52,7 +52,7 @@ export default function Home() {
           />
         </div>
 
-        <ProductsArchive className="mb-16" />
+        <ProductsArchive className="mb-16" header={"Services and Products"} />
 
         <div className="h-full p-2 mb-16">
           <h2 className="font-heading text-5xl text-secondary-black text-center mb-8 md:mb-14">
@@ -107,7 +107,7 @@ export default function Home() {
             Benefits of coming under VEU program?
           </h2>
           <div className="flex flex-col md:flex-row items-start w-full gap-10 md:gap-0">
-            <div className="w-full md:w-1/3 flex flex-col items-center gap-5">
+            <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
                 src={operator}
                 alt="operator"
@@ -119,7 +119,7 @@ export default function Home() {
                 Save money on energy bills
               </strong>
             </div>
-            <div className="w-full md:w-1/3 flex flex-col items-center gap-5">
+            <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
                 src={operator}
                 alt="operator"
@@ -131,7 +131,19 @@ export default function Home() {
                 Save money on energy bills
               </strong>
             </div>
-            <div className="w-full md:w-1/3 flex flex-col items-center gap-5">
+            <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
+              <Image
+                src={operator}
+                alt="operator"
+                width={300}
+                height={300}
+                loading="lazy"
+              />
+              <strong className="text-lg font-body font-bold">
+                Save money on energy bills
+              </strong>
+            </div>
+            <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
                 src={operator}
                 alt="operator"

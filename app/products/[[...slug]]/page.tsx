@@ -20,14 +20,16 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     const [currentSlug, ...remainingSlugs] = slugArray;
     const product = productsArray.find((prod) => prod.slug === currentSlug);
 
-    if (
-      product &&
-      remainingSlugs.length &&
-      product.isCategory &&
-      product.category
-    ) {
-      return findProduct(remainingSlugs, product.category);
-    }
+    if (product) {
+      if (product.serviceType) return product;
+      else if (
+        remainingSlugs.length &&
+        product.isCategory &&
+        product.category
+      ) {
+        return findProduct(remainingSlugs, product.category);
+      }
+    } else return undefined;
 
     return product;
   };
@@ -37,16 +39,13 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     const product = findProduct(slug, Products);
 
     if (product) {
-      if (product.isCategory && product.category) {
+      if (product.isCategory && product.category && !product.serviceType) {
         // If the product is a category, render the ProductsArchive component
         content = <ProductsArchive items={product.category} free />;
       } else {
         // If the product is a single product, render the ProductDetailsPage component
         content = (
-          <ProductDetailsPage
-            sizeOfSlug={slug.length}
-            product={product}
-          />
+          <ProductDetailsPage sizeOfSlug={slug.length} product={product} />
         );
       }
     } else {
@@ -60,8 +59,8 @@ export default function Page({ params }: { params: { slug: string[] } }) {
 
   return (
     <>
-      <div className="mt-40 mb-20 px-5 sm:px-10">
-        <div className="mb-6">
+      <div className="pt-40 pb-20 bg-secondary-white">
+        <div className="mb-6 px-5 md:px-16">
           <Breadcrumbs currentPath={currentPath} />
         </div>
         {content}
