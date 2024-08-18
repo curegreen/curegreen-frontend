@@ -2,8 +2,13 @@ import { footerItems } from "@/data/footerItems";
 import React from "react";
 import { LinkPreview } from "./ui/link-preview";
 import Image from "next/image";
+import Link from "next/link";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { ImTarget } from "react-icons/im";
+import { GoMention } from "react-icons/go";
+import { IoInformationCircle } from "react-icons/io5";
 
-const footerLogo = '/images/logos/footerLogo.png'
+const footerLogo = "/images/logos/footerLogo.png";
 
 export default function Footer() {
   return (
@@ -17,7 +22,7 @@ export default function Footer() {
           {/* right side links */}
           <div className="w-full md:w-2/3 flex flex-col md:flex-row justify-start items-start space-y-10 md:space-y-0 md:space-x-10 lg:space-x-20 px-5 md:px-10 mb-10">
             {footerItems.map((footerItem, id) => (
-              <div key={id} className={`${id == 2 ? "w-full": "w-2/3"}`}>
+              <div key={id} className="w-2/3">
                 <p className="font-bold my-5 text-2xl">{footerItem.head}</p>
                 <ul className="space-y-3">
                   {footerItem.items.map(({ title, link, icon }, id) => (
@@ -34,10 +39,50 @@ export default function Footer() {
                 </ul>
               </div>
             ))}
+            <div className="w-full">
+              <p className="font-bold my-5 text-2xl">Get In Touch</p>
+              <ul className="space-y-3">
+                <li className="flex justify-start items-start text-sm">
+                  <div className="flex justify-center items-center gap-2">
+                    <FaPhoneVolume />
+                    <Link href={"tel:0426722199"}>0426722199</Link>
+                    {"/"}
+                    <Link href={"tel:0475237850"}>0475237850</Link>
+                  </div>
+                </li>
+                <li className="flex justify-start items-start text-sm">
+                  <div className="flex justify-center items-center gap-2">
+                    <ImTarget />
+                    <Link href={"https://maps.app.goo.gl/LzshKkAqY6PuLUf98"}>
+                      Point Cook, 3030
+                    </Link>
+                  </div>
+                </li>
+                <li className="flex justify-start items-start text-sm">
+                  <div className="flex justify-center items-center gap-2">
+                    <GoMention />
+                    <Link href={"mailto:infogreen@gmail.com"}>
+                      infogreen@gmail.com
+                    </Link>
+                  </div>
+                </li>
+                <li className="flex justify-start items-start text-sm">
+                  <div className="flex justify-center items-center gap-2">
+                    <IoInformationCircle className="text-xl" />
+                    <Link href={"tel:29679858578"}>
+                      Australian Business Number(ABN): 29679858578
+                    </Link>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="w-full text-center">
-          Copyright © {new Date().getFullYear()} | All Rights Reserved | <LinkPreview url="https://github.com/Prasundas99">CureGreen.com</LinkPreview>
+          Copyright © {new Date().getFullYear()} | All Rights Reserved |{" "}
+          <LinkPreview url="https://github.com/Prasundas99">
+            CureGreen.com
+          </LinkPreview>
         </div>
       </footer>
     </>

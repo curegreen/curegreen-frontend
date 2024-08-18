@@ -21,15 +21,13 @@ export default function SizeCard({
           <div className="bg-white rounded-md">
             <div className="relative flex items-center justify-center">
               <DirectionAwareHover imageUrl={image}>
-                <p className="font-bold text-xl">Something Faltu</p>
-                <p className="font-normal text-sm">Description of Faltu</p>
               </DirectionAwareHover>
             </div>
             <div className="px-4 space-y-2 pb-4">
               <h4 className="mt-2 capitalize font-bold text-xl text-black">
                 {title} - {size}
               </h4>
-              <p>{houseSize}</p>
+              <p>For {houseSize} houses</p>
               {inverter && (
                 <p>
                   Inverter <strong>{inverter}</strong>

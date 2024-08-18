@@ -152,7 +152,7 @@ function Navbar({
                   <Fragment key={id}>
                     <ProductItem
                       title={name}
-                      href={`/products/${link}`}
+                      href={`/products${link}`}
                       src={image}
                       description={shortDesc || ""}
                     />

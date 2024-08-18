@@ -13,15 +13,15 @@ export type products = {
   link?: string;
   image: string;
   optionalGallery?: genericGallery[];
-  description?: string;
+  description?: string | ReactNode;
   sizes?: sizes[];
-  howItWorks?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
+  howItWorks?: { header: ReactNode;gif: string; desc: ReactNode };
   rebate?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
   stats?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
   whyUpgrade?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
   category?: products[];
   gallery?: ReactImageGalleryItem[];
-  features?: string;
+  features?: string | ReactNode;
 };
 
 export type genericGallery = {

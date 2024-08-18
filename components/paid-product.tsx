@@ -6,6 +6,7 @@ import { FaEdit } from "react-icons/fa";
 import { Button } from "./ui/button";
 import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import GifContentBlock from "./gif-content";
 
 export default function PaidProduct({ product }: { product: products }) {
   const themeMap: {
@@ -155,11 +156,11 @@ export default function PaidProduct({ product }: { product: products }) {
 
         {howItWorks && (
           <div className="bg-white w-full mb-16 py-4">
-            <ImageContentBlock
+            <GifContentBlock
               header={howItWorks.header}
               content={howItWorks.desc}
-              images={howItWorks.img}
-              imagePosition="right"
+              gif={howItWorks.gif}
+              gifPosition="right"
               className="mb-16 px-12"
             />
           </div>

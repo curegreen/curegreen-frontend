@@ -1,11 +1,19 @@
+import GifContentBlock from "@/components/gif-content";
 import ImageContentBlock from "@/components/image-content";
 import ProductsArchive from "@/components/products-archive";
 import { Products } from "@/data/products";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
 import { Fragment } from "react";
-const homeBg = "/images/homeBg.png";
-const operator = "/images/operator.png";
+const homeUrl = "/images/Home Page";
+const homeBg = `${homeUrl}/homeBg.png`;
+const aboutUsImg = `${homeUrl}/2 About us.jpg`;
+const operator = `${homeUrl}/4 How We will Operate.jpg`;
+const veu1 = `${homeUrl}/5 why join VEU a.jpg`;
+const veu2 = `${homeUrl}/5 why join VEU b.jpg`;
+const veu3 = `${homeUrl}/5 why join VEU c.jpg`;
+const veu4 = `${homeUrl}/5 why join VEU d.jpg`;
+
 export default function Home() {
   const products = Products.slice(0, 3);
   return (
@@ -46,7 +54,7 @@ export default function Home() {
                 </p>
               </>
             }
-            images={"/images/aboutUs.png"}
+            images={aboutUsImg}
             imagePosition="left"
             className="mb-16"
           />
@@ -64,7 +72,7 @@ export default function Home() {
                 <Fragment key={id}>
                   <TabsTrigger
                     value={slug}
-                    className={`w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg ${
+                    className={`w-full sm:w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg ${
                       id === 1
                         ? "data-[state=active]:text-primary-yellow data-[state=active]:border-b-primary-yellow"
                         : id === 2
@@ -81,10 +89,10 @@ export default function Home() {
               <Fragment key={id}>
                 <TabsContent value={slug} className="px-5">
                   {howItWorks && (
-                    <ImageContentBlock
+                    <GifContentBlock
                       content={howItWorks?.desc}
-                      images={howItWorks?.img}
-                      imagePosition={id % 2 !== 0 ? "left" : "right"}
+                      gif={howItWorks?.gif}
+                      gifPosition={id % 2 !== 0 ? "left" : "right"}
                     />
                   )}
                 </TabsContent>
@@ -109,50 +117,50 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-start w-full gap-10 md:gap-0">
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
-                src={operator}
-                alt="operator"
+                src={veu1}
+                alt="veu"
                 width={300}
                 height={300}
                 loading="lazy"
               />
-              <strong className="text-lg font-body font-bold">
+              <strong className="text-lg font-body font-bold w-full px-5 text-center">
                 Save money on energy bills
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
-                src={operator}
-                alt="operator"
+                src={veu2}
+                alt="veu"
                 width={300}
                 height={300}
                 loading="lazy"
               />
-              <strong className="text-lg font-body font-bold">
-                Save money on energy bills
+              <strong className="text-lg font-body font-bold w-full px-5 text-center">
+                Government Rebates available
+              </strong>
+            </div>
+            <div className="w-full md:w-1/4 flex flex-col items-center gap-5 ">
+              <Image
+                src={veu3}
+                alt="veu"
+                width={300}
+                height={300}
+                loading="lazy"
+              />
+              <strong className="text-lg font-body font-bold w-full px-5 text-center">
+                Take advantage on discounted applicances
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
               <Image
-                src={operator}
-                alt="operator"
+                src={veu4}
+                alt="veu"
                 width={300}
                 height={300}
                 loading="lazy"
               />
-              <strong className="text-lg font-body font-bold">
-                Save money on energy bills
-              </strong>
-            </div>
-            <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <Image
-                src={operator}
-                alt="operator"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
-              <strong className="text-lg font-body font-bold">
-                Save money on energy bills
+              <strong className="text-lg font-body font-bold w-full px-5 text-center">
+                Help save the environment
               </strong>
             </div>
           </div>
@@ -164,12 +172,21 @@ export default function Home() {
             Some Facts:{" "}
           </h2>
           <ul className="w-full text-left font-body list-disc pl-5 space-y-2">
-            <li>Upgrading hot water system can save up to 30% annually</li>
-            <li>Upgrading heating can save up to 40% annually</li>
-            <li>Over 2.2 million households are benefitted from the program</li>
             <li>
-              It is estimated this program will save an estimated 28 million
-              tons of greenhouse gas emissions between 2022-2025
+              Upgrading hot water system can save <strong>from 40%</strong>{" "}
+              annually
+            </li>
+            <li>
+              Upgrading heating can save <strong>upto 40%</strong> annually
+            </li>
+            <li>
+              Over <strong>2.2 million</strong> households are benefitted from
+              the program
+            </li>
+            <li>
+              It is estimated this program will save an estimated{" "}
+              <strong>28 million</strong> tons of greenhouse gas emissions
+              between 2022-2025
             </li>
           </ul>
         </div>
