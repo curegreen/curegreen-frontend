@@ -3,6 +3,7 @@ import { products } from "@/lib/definitions";
 import { Products } from "@/data/products";
 import ProductCard from "./ui/product-card";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ProductsArchive({
   items = Products,
@@ -44,7 +45,14 @@ export default function ProductsArchive({
         <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {items.map(({ id, name, image, link }) => (
             <Fragment key={id}>
-              <ProductCard name={name} image={image} link={link} free={free} />
+              <Link href={`/products/${link}`}>
+                <ProductCard
+                  name={name}
+                  image={image}
+                  link={link}
+                  free={free}
+                />
+              </Link>
             </Fragment>
           ))}
         </div>

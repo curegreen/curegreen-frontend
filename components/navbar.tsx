@@ -13,13 +13,78 @@ import { products } from "@/lib/definitions";
 import Image from "next/image";
 import { GoMention } from "react-icons/go";
 import Link from "next/link";
+import NavBurgerBtn from "./ui/burger-btn";
+import Sidebar from "./sidebar";
 
 const headerLogo = "/images/logos/headerLogo.png";
+const mobHeaderLogo = "/images/logos/CureGreen_No Bg LogoMark.png";
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDrawer = (open: boolean) => setIsOpen(open);
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <Navbar items={Products.slice(0, 2)} />
+    <div>
+      {/* Mobile Nav */}
+      <div className="relative w-full md:hidden">
+        <div className="bg-white fixed top-0 inset-x-0 z-50 h-auto rounded">
+          <div className="relative w-full flex flex-col items-center justify-center">
+            <div className="w-full flex justify-center md:justify-between py-2.5 mt-0 md:px-16 items-center bg-primary-green text-white">
+              <div className="md:flex justify-center items-center gap-3 hidden">
+                <p>Contact for knowing more details</p>
+                <span>
+                  <FaArrowRightLong />
+                </span>
+              </div>
+              <div className="flex justify-center items-center space-x-2 text-sm">
+                <div className="flex justify-center items-center gap-1">
+                  <span>
+                    <FaPhoneVolume />
+                  </span>
+                  <div className="flex justify-center items-center">
+                    <Link href={"tel:0426722199"}>0426722199</Link>
+                    {"/"}
+                    <Link href={"tel:0475237850"}>0475237850</Link>
+                  </div>
+                </div>
+                <Link
+                  href={"mailto:infogreen@gmail.com"}
+                  className="flex justify-center items-center gap-1"
+                >
+                  <span>
+                    <GoMention />
+                  </span>
+                  <p className="font-body">infogreen@gmail.com</p>
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between w-full">
+              <div className="w-1/3"></div>
+              <div className="w-1/3 flex justify-center">
+                <HoveredLink href="/">
+                  <Image
+                    src={mobHeaderLogo}
+                    alt={mobHeaderLogo}
+                    width={100}
+                    height={100}
+                  />
+                </HoveredLink>
+              </div>
+              <div className="w-1/3 flex justify-end relative z-50">
+                <NavBurgerBtn toggleDrawer={toggleDrawer} state={isOpen} />
+              </div>
+              <Sidebar isOpen={isOpen} toggleDrawer={toggleDrawer} />
+            </div>
+
+            {/* nav sidebar */}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Nav */}
+      <div className="hidden relative w-full md:flex items-center justify-center">
+        <Navbar items={Products.slice(0, 2)} />
+      </div>
     </div>
   );
 }
@@ -68,7 +133,7 @@ function Navbar({
           <HoveredLink href="/">
             <Image src={headerLogo} alt={headerLogo} width={250} height={20} />
           </HoveredLink>
-          <div className="flex items-center justify-center space-x-4 md:space-x-16">
+          <div className="flex items-center justify-center space-x-8 lg:space-x-16">
             <HoveredLink
               href="/#about"
               scroll={false}

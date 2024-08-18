@@ -5,7 +5,7 @@ import { Button } from "./button";
 
 export default function ProductCard({image, name, free, link}: {image: string, name: string, free: boolean, link?: string}) {
   return (
-    <div className="bg-neutral-100 rounded-md">
+    <div className="bg-white rounded-md">
       <div className="relative flex items-center justify-center">
         <DirectionAwareHover imageUrl={image}>
           <p className="font-bold text-xl">Something Faltu</p>

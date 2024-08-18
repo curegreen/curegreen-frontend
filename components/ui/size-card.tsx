@@ -18,7 +18,7 @@ export default function SizeCard({
     <>
       {sizes.map(({ size, houseSize, inverter, system, image }, idx) => (
         <Fragment key={idx}>
-          <div className="bg-neutral-100 rounded-md">
+          <div className="bg-white rounded-md">
             <div className="relative flex items-center justify-center">
               <DirectionAwareHover imageUrl={image}>
                 <p className="font-bold text-xl">Something Faltu</p>
