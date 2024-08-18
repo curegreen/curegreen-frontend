@@ -388,7 +388,6 @@ export const Products: products[] = [
     id: 4,
     slug: "free-products",
     serviceType: false,
-    type: "free-products",
     name: "Free Products",
     shortDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
