@@ -9,6 +9,7 @@ export default function Footer() {
   return (
     <>
       <footer className="dark:bg-white bg-black text-white dark:text-black flex flex-col w-full items-center justify-center md:max-h-80 overflow-clip">
+        
         <div className="flex flex-col md:flex-row justify-between items-center gap-10 w-full pt-4 md:pt-10">
           {/* Left side Logo */}
           <div className="w-full md:w-1/3 flex justify-center px-5 pt-10 md:pt-0 md:pl-10">
