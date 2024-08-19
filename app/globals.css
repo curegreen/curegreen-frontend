@@ -67,3 +67,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'Berlin Sans FB Demi Bold';
+  src: url('/fonts/BRLNSDB.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

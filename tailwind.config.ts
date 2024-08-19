@@ -1,14 +1,14 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './data/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./data/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -30,7 +30,7 @@ const config = {
           foreground: "hsl(var(--primary-foreground))",
           blue: "#3E7FC0",
           green: "#58B447",
-          yellow: "#F8DB0F"
+          yellow: "#F8DB0F",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,7 +38,8 @@ const config = {
           white: "#F5F5F5",
           black: "#0B0B0B",
           lightGreen: "#94ED7D",
-          darkBlue: "#2E3191"
+          darkBlue: "#2E3191",
+          lightYellow: "#ffed63"
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -62,8 +63,8 @@ const config = {
         },
       },
       fontFamily: {
-        heading: ['Berlin Sans FB Demi', 'latin'],
-        body: ['Source Sans 3', 'sans-serif']
+        heading: ["Berlin Sans FB Demi Bold", "latin"],
+        body: ["var(--font-source-sans-3)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -87,6 +88,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

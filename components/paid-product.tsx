@@ -7,6 +7,9 @@ import { Button } from "./ui/button";
 import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
+import GenericForm from "./generic-form";
+import { constantFormFields } from "@/data/formItems";
+const DummyPic = "/images/dummyPic.jpeg";
 
 export default function PaidProduct({ product }: { product: products }) {
   const themeMap: {
@@ -19,7 +22,7 @@ export default function PaidProduct({ product }: { product: products }) {
     yellow: {
       bg: "bg-primary-yellow",
       text: "text-secondary-white",
-      hover: "hover:bg-yellow-500",
+      hover: "hover:bg-secondary-lightYellow",
     },
     blue: {
       bg: "bg-primary-blue",
@@ -198,6 +201,18 @@ export default function PaidProduct({ product }: { product: products }) {
             />
           </div>
         )}
+        <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+          <GenericForm
+            formFields={JSON.stringify(constantFormFields)}
+            color={text}
+            bgColor={bg}
+            formTitle={product.serviceType ? "Get Quote" : "Contact Us"}
+            imageOverlayColor={text}
+            buttonTextColor={bg}
+            buttonBgColor={text}
+            image={DummyPic}
+          />
+        </div>
       </div>
     </>
   );

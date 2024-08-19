@@ -4,6 +4,9 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
+import GenericForm from "./generic-form";
+import { constantFormFields } from "@/data/formItems";
+const DummyPic = "/images/dummyPic.jpeg";
 
 export default function FreeProduct({ product }: { product: products }) {
   const { name, description, gallery, features } = product;
@@ -61,6 +64,13 @@ export default function FreeProduct({ product }: { product: products }) {
               </Link>
             </div>
           </div>
+        </div>
+        <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+          <GenericForm
+            formFields={JSON.stringify(constantFormFields)}
+            formTitle={product.serviceType ? "Get Quote" : "Contact Us"}
+            image={DummyPic}
+          />
         </div>
       </div>
     </>

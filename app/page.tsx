@@ -1,6 +1,8 @@
+import GenericForm from "@/components/generic-form";
 import GifContentBlock from "@/components/gif-content";
 import ImageContentBlock from "@/components/image-content";
 import ProductsArchive from "@/components/products-archive";
+import { constantFormFields } from "@/data/formItems";
 import { Products } from "@/data/products";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
@@ -13,13 +15,14 @@ const veu1 = `${homeUrl}/5 why join VEU a.jpg`;
 const veu2 = `${homeUrl}/5 why join VEU b.jpg`;
 const veu3 = `${homeUrl}/5 why join VEU c.jpg`;
 const veu4 = `${homeUrl}/5 why join VEU d.jpg`;
+const DummyPic = "/images/dummyPic.jpeg";
 
 export default function Home() {
   const products = Products.slice(0, 3);
   return (
     <main className="flex bg-secondary-white min-h-screen flex-col items-center justify-between">
       {/* Home Background Image */}
-      <div className="mt-14 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-hidden">
+      <div className="mt-14 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
         <Image
           src={homeBg}
           alt="Landscape image"
@@ -189,6 +192,13 @@ export default function Home() {
               between 2022-2025
             </li>
           </ul>
+        </div>
+        <div id="form" className="mt-20 pt-20 border-t-2">
+          <GenericForm
+            formFields={JSON.stringify(constantFormFields)}
+            formTitle={"Get Quote"}
+            image={DummyPic}
+          />
         </div>
       </div>
     </main>

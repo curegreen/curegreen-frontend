@@ -15,10 +15,14 @@ export type products = {
   optionalGallery?: genericGallery[];
   description?: string | ReactNode;
   sizes?: sizes[];
-  howItWorks?: { header: ReactNode;gif: string; desc: ReactNode };
-  rebate?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
-  stats?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
-  whyUpgrade?: { header: ReactNode;img: ReactImageGalleryItem[]; desc: ReactNode };
+  howItWorks?: { header: ReactNode; gif: string; desc: ReactNode };
+  rebate?: { header: ReactNode; img: ReactImageGalleryItem[]; desc: ReactNode };
+  stats?: { header: ReactNode; img: ReactImageGalleryItem[]; desc: ReactNode };
+  whyUpgrade?: {
+    header: ReactNode;
+    img: ReactImageGalleryItem[];
+    desc: ReactNode;
+  };
   category?: products[];
   gallery?: ReactImageGalleryItem[];
   features?: string | ReactNode;
@@ -43,7 +47,7 @@ export type footerLinks = {
   icon?: ReactElement;
 };
 
-export type footerItem = { head: string; items: footerLinks[] };
+export type footerItem = { head: ReactNode; items: footerLinks[] };
 
 export type formFieldConfig = {
   name: string;
@@ -62,4 +66,4 @@ export type formProps = {
   onSubmit: SubmitHandler<Record<string, any>>;
   submitBtnValue: string;
   prefilledValues?: Record<string, string | number>;
-}
+};

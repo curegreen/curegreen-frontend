@@ -165,7 +165,7 @@ function Navbar({
                 </HoveredLink>
               </div>
             </MenuItem>
-            <HoveredLink href="/quote">
+            <HoveredLink href="#form">
               <Button className="bg-primary-blue hover:bg-secondary-darkBlue">
                 Get a Quote
               </Button>

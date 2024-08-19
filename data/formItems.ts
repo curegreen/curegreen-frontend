@@ -34,7 +34,6 @@ export const constantFormFields = [
     label: "Address",
     type: "text",
     placeholder: "123 Main St",
-    className: "w-full",
     validation: z.string().min(5),
   },
   {
@@ -56,7 +55,6 @@ export const constantFormFields = [
     label: "How Can We Help?",
     type: "textarea",
     placeholder: "Tell us how we can assist you...",
-    className: "w-full",
     validation: z.string().min(10),
   },
 ];

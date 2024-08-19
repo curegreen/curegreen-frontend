@@ -5,9 +5,8 @@ import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
 import GenericForm from "@/components/generic-form";
-
-import DummyPic from "../../../public/images/dummyPic.jpeg";
 import { constantFormFields } from "@/data/formItems";
+const DummyPic = "/images/dummyPic.jpeg";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -45,7 +44,18 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     if (product) {
       if (product.isCategory && product.category && !product.serviceType) {
         // If the product is a category, render the ProductsArchive component
-        content = <ProductsArchive items={product.category} free />;
+        content = (
+          <div className="space-y-20">
+            <ProductsArchive items={product.category} free />
+            <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+              <GenericForm
+                formFields={JSON.stringify(constantFormFields)}
+                formTitle="Contact Us"
+                image={DummyPic}
+              />
+            </div>
+          </div>
+        );
       } else {
         // If the product is a single product, render the ProductDetailsPage component
         content = (
@@ -58,28 +68,28 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     }
   } else {
     // If slug length is 0, render the ProductsArchive component
-    content = <ProductsArchive />;
+    content = (
+      <div className="space-y-20">
+        <ProductsArchive />
+        <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+          <GenericForm
+            formFields={JSON.stringify(constantFormFields)}
+            formTitle="Get Quote"
+            image={DummyPic}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
     <>
-      <div className="pt-40 pb-20 bg-secondary-white">
+      <div className="pt-40 bg-secondary-white">
         <div className="mb-6 px-5 md:px-16">
           <Breadcrumbs currentPath={currentPath} />
         </div>
         {content}
       </div>
-      <GenericForm
-        formFields={JSON.stringify(constantFormFields)}
-        color="#0B0B0B"
-        bgColor="#F5F5F5"
-        formTitle="Contact Us"
-        imageOverlayOpacity={0.28}
-        imageOverlayColor="#2E3191"
-        buttonTextColor="white"
-        buttonBgColor="#2E3191"
-        image={DummyPic}
-      />
     </>
   );
 }

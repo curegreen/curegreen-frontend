@@ -262,9 +262,23 @@ export const Products: products[] = [
       },
     ],
     howItWorks: {
-      header: "How Solar Panels Work?",
-      gif: `${gifUrl}/air conditioning.gif`,
-      desc: "A solar system operates by harnessing energy from the sun using panels installed on rooftops or open spaces. Excess electricity can be stored in batteries for later use or fed back into the grid. Solar systems are an eco-friendly way to power homes and businesses, reducing reliance on traditional energy sources and lowering electricity bills",
+      header: <h2 className="3xl mb-16">How Solar Panels Work?</h2>,
+      gif: `${gifUrl}/solar energy.gif`,
+      desc: (
+        <div className="font-body text-xl space-y-8">
+          <p>
+            A solar system operates by harnessing energy from the sun using
+            panels installed on rooftops or open spaces. Excess electricity can
+            be stored in batteries for later use or fed back into the grid.
+          </p>{" "}
+          <p>
+            {" "}
+            Solar systems are an eco-friendly way to power homes and businesses,
+            reducing reliance on traditional energy sources and lowering
+            electricity bills
+          </p>
+        </div>
+      ),
     },
     rebate: {
       header: "Government Eligible Rebates",
@@ -318,10 +332,10 @@ export const Products: products[] = [
       },
     ],
     howItWorks: {
-      header: "How hot water systems work?",
+      header: <h2 className="3xl mb-16">How hot water systems work?</h2>,
       gif: `${gifUrl}/hot water system.gif`,
       desc: (
-        <>
+        <div className="font-body text-xl space-y-8">
           <p>
             A hot water system typically operates by heating water using either
             electricity. In a traditional electric system, water is heated in a
@@ -329,12 +343,11 @@ export const Products: products[] = [
             pipes to faucets and appliances as needed, providing a constant
             supply of heated water.
           </p>
-          <br />{" "}
           <p>
             For us, we are ensuring top notch service in providing you an
             efficient electricity-led hot water system.
           </p>
-        </>
+        </div>
       ),
     },
     whyUpgrade: {
@@ -406,20 +419,28 @@ export const Products: products[] = [
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     howItWorks: {
-      header: "How the Air Conditioning for both system works?",
-      gif: `${gifUrl}/solar energy.gif`,
+      header: (
+        <h2 className="3xl mb-16">
+          How the Air Conditioning for both system works?
+        </h2>
+      ),
+      gif: `${gifUrl}/air conditioning.gif`,
       desc: (
-        <p className="mt-16">
-          A <strong>split system air conditioner</strong> works by using an
-          outdoor compressor to cool refrigerant, which is then circulated
-          through indoor units that release cool air into the room. The system
-          can be reversed to provide heating as well. In a{" "}
-          <strong>refrigerated cooling system</strong>, the process is similar,
-          but it involves a central unit that cools air and distributes it
-          through ducts to multiple rooms. Both systems offer precise
-          temperature control and efficient cooling, making them ideal for
-          maintaining a comfortable indoor climate year-round.
-        </p>
+        <div className="font-body text-xl space-y-8">
+          <p>
+            A <strong>split system air conditioner</strong> works by using an
+            outdoor compressor to cool refrigerant, which is then circulated
+            through indoor units that release cool air into the room. The system
+            can be reversed to provide heating as well.
+          </p>
+          <p>
+            In a <strong>refrigerated cooling system</strong>, the process is
+            similar, but it involves a central unit that cools air and
+            distributes it through ducts to multiple rooms. Both systems offer
+            precise temperature control and efficient cooling, making them ideal
+            for maintaining a comfortable indoor climate year-round.
+          </p>
+        </div>
       ),
     },
     whyUpgrade: {
