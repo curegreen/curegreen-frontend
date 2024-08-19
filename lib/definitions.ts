@@ -2,6 +2,7 @@ import { z } from "zod";
 import { ReactElement, ReactNode } from "react";
 import { ReactImageGalleryItem } from "react-image-gallery";
 import { SubmitHandler } from "react-hook-form";
+import { StaticImageData } from "next/image";
 
 export type products = {
   id: number;
@@ -26,6 +27,7 @@ export type products = {
   category?: products[];
   gallery?: ReactImageGalleryItem[];
   features?: string | ReactNode;
+  quoteImg?: string | StaticImageData;
 };
 
 export type genericGallery = {

@@ -6,7 +6,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
 import GenericForm from "./generic-form";
 import { productPageFields } from "@/data/formItems";
-const DummyPic = "/images/dummyPic.jpeg";
 
 export default function FreeProduct({ product }: { product: products }) {
   const { name, description, gallery, features } = product;
@@ -69,7 +68,6 @@ export default function FreeProduct({ product }: { product: products }) {
           <GenericForm
             formFields={JSON.stringify(productPageFields)}
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}
-            image={DummyPic}
           />
         </div>
       </div>

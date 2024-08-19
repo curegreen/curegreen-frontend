@@ -36,14 +36,13 @@ export function Header() {
                   <FaArrowRightLong />
                 </span>
               </div>
-              <div className="flex justify-center items-center space-x-2 text-sm">
-                <div className="flex justify-center items-center gap-1">
+              <div className="flex justify-center items-center space-x-8 text-sm">
+                <div className="flex justify-center items-center gap-2">
                   <span>
                     <FaPhoneVolume />
                   </span>
-                  <div className="flex justify-center items-center">
+                  <div className="flex flex-col justify-center items-center">
                     <Link href={"tel:0426722199"}>0426722199</Link>
-                    {"/"}
                     <Link href={"tel:0475237850"}>0475237850</Link>
                   </div>
                 </div>
@@ -114,7 +113,7 @@ function Navbar({
               <span>
                 <FaPhoneVolume className="hidden sm:block" />
               </span>
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center gap-1">
                 <Link href={"tel:0426722199"}>0426722199</Link>
                 {"/"}
                 <Link href={"tel:0475237850"}>0475237850</Link>

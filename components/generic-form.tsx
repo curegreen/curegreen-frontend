@@ -14,6 +14,7 @@ import {
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+const defaultImage = '/images/Get Quote- Contact Us Images/Get Quote Free products.png'
 
 type FormFieldType = {
   name: string;
@@ -34,7 +35,7 @@ type GenericFormProps = {
   imageOverlayColor?: string;
   buttonTextColor?: string;
   buttonBgColor?: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
 };
 
 export default function GenericForm({
@@ -46,7 +47,7 @@ export default function GenericForm({
   imageOverlayColor = "#0B0B0B",
   buttonTextColor = "#F5F5F5",
   buttonBgColor = "#0B0B0B",
-  image,
+  image = defaultImage,
 }: GenericFormProps) {
   const parsedFormFields: FormFieldType[] = JSON.parse(formFields);
   const formRef = useRef<HTMLFormElement>(null);

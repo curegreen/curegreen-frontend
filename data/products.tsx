@@ -6,6 +6,7 @@ const airUrl = "/images/Air";
 const waterUrl = "/images/Water";
 const productsUrl = "/images/Products";
 const gifUrl = "/images/GIFS";
+const quoteUrl = "/images/Get Quote- Contact Us Images";
 
 export const ShowerHeads: products[] = [
   {
@@ -325,6 +326,7 @@ export const Products: products[] = [
       ),
     },
     isCategory: false,
+    quoteImg: `${quoteUrl}/Get Quote Solar System.png`
   },
   {
     id: 2,
@@ -417,6 +419,7 @@ export const Products: products[] = [
         </>
       ),
     },
+    quoteImg: `${quoteUrl}/Get Quote Water System.png`
   },
   {
     id: 3,
@@ -505,6 +508,7 @@ export const Products: products[] = [
         </div>
       ),
     },
+    quoteImg: `${quoteUrl}/Get Quote Air.png`
   },
   {
     id: 4,

@@ -210,7 +210,7 @@ export default function PaidProduct({ product }: { product: products }) {
             imageOverlayColor={text}
             buttonTextColor={bg}
             buttonBgColor={text}
-            image={DummyPic}
+            image={product.quoteImg}
           />
         </div>
       </div>

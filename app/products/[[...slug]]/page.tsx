@@ -6,7 +6,6 @@ import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
 import GenericForm from "@/components/generic-form";
 import { freeProductArchivePageFields, homePageFields } from "@/data/formItems";
-const DummyPic = "/images/dummyPic.jpeg";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -51,7 +50,6 @@ export default function Page({ params }: { params: { slug: string[] } }) {
               <GenericForm
                 formFields={JSON.stringify(freeProductArchivePageFields)}
                 formTitle="Contact Us"
-                image={DummyPic}
               />
             </div>
           </div>
@@ -75,7 +73,6 @@ export default function Page({ params }: { params: { slug: string[] } }) {
           <GenericForm
             formFields={JSON.stringify(homePageFields)}
             formTitle="Get Quote"
-            image={DummyPic}
           />
         </div>
       </div>

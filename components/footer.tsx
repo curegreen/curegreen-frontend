@@ -1,9 +1,8 @@
 import { footerItems } from "@/data/footerItems";
 import React from "react";
-import { LinkPreview } from "./ui/link-preview";
 import Image from "next/image";
 import Link from "next/link";
-import { FaPhoneVolume } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaPhoneVolume } from "react-icons/fa6";
 import { ImTarget } from "react-icons/im";
 import { GoMention } from "react-icons/go";
 import { IoInformationCircle } from "react-icons/io5";
@@ -27,13 +26,13 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {footerItem.items.map(({ title, link, icon }, id) => (
                     <li key={id}>
-                      <LinkPreview
-                        url={link}
-                        className="flex justify-start items-start text-sm"
+                      <Link
+                        href={link}
+                        className="flex justify-start items-start text-sm hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
                       >
                         {icon && <i className="mr-2 mt-1">{icon}</i>}
                         {title}
-                      </LinkPreview>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -42,18 +41,45 @@ export default function Footer() {
             <div className="w-full">
               <h4 className="font-heading my-5 text-2xl">Get In Touch</h4>
               <ul className="space-y-3">
+                <li className="flex justify-start md:justify-center items-start text-2xl gap-5 w-1/2">
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61564071297621"
+                    className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                  >
+                    <FaFacebook />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/curegreen.au?igsh=ZW1tMnAzejVwczUz"
+                    className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                  >
+                    <FaInstagram />
+                  </Link>
+                </li>
                 <li className="flex justify-start items-start text-sm">
-                  <div className="flex justify-center items-center gap-2">
-                    <FaPhoneVolume />
-                    <Link href={"tel:0426722199"}>0426722199</Link>
+                  <div className="flex justify-center items-center gap-1">
+                    <FaPhoneVolume className="mr-1" />
+                    <Link
+                      href={"tel:0426722199"}
+                      className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                    >
+                      0426722199
+                    </Link>
                     {"/"}
-                    <Link href={"tel:0475237850"}>0475237850</Link>
+                    <Link
+                      href={"tel:0475237850"}
+                      className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                    >
+                      0475237850
+                    </Link>
                   </div>
                 </li>
                 <li className="flex justify-start items-start text-sm">
                   <div className="flex justify-center items-center gap-2">
                     <ImTarget />
-                    <Link href={"https://maps.app.goo.gl/LzshKkAqY6PuLUf98"}>
+                    <Link
+                      href={"https://maps.app.goo.gl/LzshKkAqY6PuLUf98"}
+                      className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                    >
                       Point Cook, 3030
                     </Link>
                   </div>
@@ -61,7 +87,10 @@ export default function Footer() {
                 <li className="flex justify-start items-start text-sm">
                   <div className="flex justify-center items-center gap-2">
                     <GoMention />
-                    <Link href={"mailto:infogreen@gmail.com"}>
+                    <Link
+                      href={"mailto:infogreen@gmail.com"}
+                      className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                    >
                       infogreen@gmail.com
                     </Link>
                   </div>
@@ -69,7 +98,10 @@ export default function Footer() {
                 <li className="flex justify-start items-start text-sm">
                   <div className="flex justify-center items-center gap-2">
                     <IoInformationCircle className="text-xl" />
-                    <Link href={"tel:29679858578"}>
+                    <Link
+                      href={"tel:29679858578"}
+                      className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                    >
                       Australian Business Number(ABN): 29679858578
                     </Link>
                   </div>
@@ -80,9 +112,12 @@ export default function Footer() {
         </div>
         <div className="w-full text-center">
           Copyright © {new Date().getFullYear()} | All Rights Reserved |{" "}
-          <LinkPreview url="https://github.com/Prasundas99">
+          <Link
+            href="/"
+            className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+          >
             CureGreen.com
-          </LinkPreview>
+          </Link>
         </div>
       </footer>
     </>
