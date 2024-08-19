@@ -179,6 +179,7 @@ export default function GenericForm({
                                 className="border p-2 w-full"
                                 style={styles.inputStyles}
                               >
+                                <option>Product Type</option>
                                 {field.options?.map((option) => (
                                   <option
                                     key={option.value}
