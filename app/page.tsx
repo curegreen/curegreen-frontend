@@ -70,12 +70,12 @@ export default function Home() {
             How It Works
           </h2>
           <Tabs defaultValue={products[0].slug} className="w-full">
-            <TabsList className="w-full rounded-md bg-neutral-200 p-1 mb-8">
+            <TabsList className="w-full rounded-md p-1 mb-8">
               {products.map(({ id, slug, name }) => (
                 <Fragment key={id}>
                   <TabsTrigger
                     value={slug}
-                    className={`w-full sm:w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg ${
+                    className={`w-1/3 capitalize data-[state=active]:border-2 data-[state=active]:border-b-4 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg ${
                       id === 1
                         ? "data-[state=active]:text-primary-yellow data-[state=active]:border-b-primary-yellow"
                         : id === 2
@@ -83,7 +83,8 @@ export default function Home() {
                         : "data-[state=active]:text-primary-green data-[state=active]:border-b-primary-green"
                     }`}
                   >
-                    {name}
+                    <p className="sm:hidden flex justify-center items-center py-4 w-full">{name.length > 8 ? `${name.slice(0, 8)}.` : name}</p>
+                    <p className="sm:flex hidden justify-center items-center py-4 w-full">{name}</p>
                   </TabsTrigger>
                 </Fragment>
               ))}

@@ -162,11 +162,11 @@ export const FreeProducts: products[] = [
   },
   {
     id: 4,
-    slug: "in-home-display-service",
+    slug: "in-home-display-device",
     serviceType: false,
-    name: "In-Home Display Service",
+    name: "In-Home Display Device",
     image: `${productsUrl}/In Home Display Device a.webp`,
-    link: "/free-products/in-home-display-service",
+    link: "/free-products/in-home-display-device",
     isCategory: false,
     description: (
       <>

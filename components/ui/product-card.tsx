@@ -8,11 +8,13 @@ export default function ProductCard({
   name,
   free,
   link,
+  isCategory,
 }: {
   image: string;
   name: string;
   free: boolean;
   link?: string;
+  isCategory?: boolean
 }) {
   return (
     <div className="bg-white rounded-md">
@@ -27,7 +29,7 @@ export default function ProductCard({
       <div className="px-4 space-y-2 pb-4">
         <h4 className="mt-2 capitalize font-bold text-xl text-black">{name}</h4>
         <div className="flex justify-around items-center">
-          {free && (
+          {free && !isCategory && (
             <Link href={"#"}>
               <Button
                 variant={"default"}
@@ -39,7 +41,7 @@ export default function ProductCard({
           )}
           <Link href={`/products/${link}`}>
             <Button variant={"outline"} className="hover:bg-neutral-200">
-              {free ? "Know More" : "View Products"}
+              {free && !isCategory ? "Know More" : "View Products"}
             </Button>
           </Link>
         </div>

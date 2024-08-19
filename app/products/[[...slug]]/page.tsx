@@ -44,9 +44,9 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       if (product.isCategory && product.category && !product.serviceType) {
         // If the product is a category, render the ProductsArchive component
         content = (
-          <div className="space-y-20">
+          <div className="space-y-5">
             <ProductsArchive items={product.category} free />
-            <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+            <div id="form" className="pt-20 border-t-2 w-full">
               <GenericForm
                 formFields={JSON.stringify(freeProductArchivePageFields)}
                 formTitle="Contact Us"
@@ -67,9 +67,9 @@ export default function Page({ params }: { params: { slug: string[] } }) {
   } else {
     // If slug length is 0, render the ProductsArchive component
     content = (
-      <div className="space-y-20">
+      <div className="space-y-5">
         <ProductsArchive />
-        <div id="form" className="mt-20 pt-20 border-t-2 w-full">
+        <div id="form" className="pt-20 border-t-2 w-full">
           <GenericForm
             formFields={JSON.stringify(homePageFields)}
             formTitle="Get Quote"
@@ -81,7 +81,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
 
   return (
     <>
-      <div className="pt-40 bg-secondary-white">
+      <div className="pt-40 mt-16 bg-secondary-white">
         <div className="mb-6 px-5 md:px-16">
           <Breadcrumbs currentPath={currentPath} />
         </div>
