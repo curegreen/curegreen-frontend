@@ -137,7 +137,7 @@ function Navbar({
             </span>
           </div>
           <div className="flex justify-center items-center gap-1 md:gap-5">
-            <div className="flex justify-center items-center md:gap-3 gap-1 text-xs md:text-md">
+            <div className="flex justify-center items-center md:gap-3 gap-1 text-xs md:text-base">
               <span>
                 <FaPhoneVolume className="hidden sm:block" />
               </span>
@@ -154,7 +154,7 @@ function Navbar({
               <span>
                 <GoMention className="hidden sm:block" />
               </span>
-              <p className="text-xs md:text-md">infogreen@gmail.com</p>
+              <p className="text-xs md:text-base">infogreen@gmail.com</p>
             </Link>
           </div>
         </div>
