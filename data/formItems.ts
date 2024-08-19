@@ -50,13 +50,6 @@ export const constantFormFields = [
     placeholder: "700001",
     validation: z.string().min(4),
   },
-  {
-    name: "desc",
-    label: "How Can We Help?",
-    type: "textarea",
-    placeholder: "Tell us how we can assist you...",
-    validation: z.string().min(10),
-  },
 ];
 
 export const homePageSpecificFields = [
@@ -71,6 +64,13 @@ export const homePageSpecificFields = [
     ],
     validation: z.string(),
   },
+  {
+    name: "desc",
+    label: "How Can We Help?",
+    type: "textarea",
+    placeholder: "Tell us how we can assist you...",
+    validation: z.string().min(10),
+  },
 ];
 
 export const homePageFields = [
@@ -78,28 +78,28 @@ export const homePageFields = [
   ...homePageSpecificFields,
 ];
 
-export const servicePageSpecificFields = [
+export const freeProductPageSpecificFields = [
   {
-    name: "serviceType",
-    label: "Service Type",
-    type: "select",
-    isReadOnly: true,
-    validation: z.string(),
+    name: "desc",
+    label: "How Can We Help?",
+    type: "textarea",
+    placeholder: "Tell us how we can assist you...",
+    validation: z.string().min(10),
   },
 ];
 
-export const servicePageFields = [
+export const freeProductArchivePageFields = [
   ...constantFormFields,
-  ...servicePageSpecificFields,
+  ...freeProductPageSpecificFields,
 ];
 
 export const productPageSpecificFields = [
   {
-    name: "productType",
-    label: "Product Type",
-    type: "select",
-    isReadOnly: true,
-    validation: z.string(),
+    name: "desc",
+    label: "How Can We Help?",
+    type: "textarea",
+    placeholder: "Please mention the product name and tell us how we can assist you...",
+    validation: z.string().min(10),
   },
 ];
 

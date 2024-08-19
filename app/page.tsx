@@ -2,7 +2,7 @@ import GenericForm from "@/components/generic-form";
 import GifContentBlock from "@/components/gif-content";
 import ImageContentBlock from "@/components/image-content";
 import ProductsArchive from "@/components/products-archive";
-import { constantFormFields } from "@/data/formItems";
+import { homePageFields } from "@/data/formItems";
 import { Products } from "@/data/products";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const veu1 = `${homeUrl}/5 why join VEU a.jpg`;
 const veu2 = `${homeUrl}/5 why join VEU b.jpg`;
 const veu3 = `${homeUrl}/5 why join VEU c.jpg`;
 const veu4 = `${homeUrl}/5 why join VEU d.jpg`;
-const DummyPic = "/images/dummyPic.jpeg";
+const formPic = `${homeUrl}/6 Get Quote Collage.png`;
 
 export default function Home() {
   const products = Products.slice(0, 3);
@@ -195,9 +195,9 @@ export default function Home() {
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2">
           <GenericForm
-            formFields={JSON.stringify(constantFormFields)}
+            formFields={JSON.stringify(homePageFields)}
             formTitle={"Get Quote"}
-            image={DummyPic}
+            image={formPic}
           />
         </div>
       </div>

@@ -8,7 +8,7 @@ import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
 import GenericForm from "./generic-form";
-import { constantFormFields } from "@/data/formItems";
+import { homePageFields } from "@/data/formItems";
 const DummyPic = "/images/dummyPic.jpeg";
 
 export default function PaidProduct({ product }: { product: products }) {
@@ -93,7 +93,7 @@ export default function PaidProduct({ product }: { product: products }) {
               <h1 className={`font-heading text-3xl font-bold ${text}`}>
                 Are you eligible for rebates in {name} under VEU?
               </h1>
-              <Link href={"#"}>
+              <Link href={"#form"}>
                 <Button
                   variant={"default"}
                   className="bg-secondary-white text-secondary-black hover:bg-secondary-black hover:text-secondary-white flex justify-center items-center gap-1"
@@ -203,7 +203,7 @@ export default function PaidProduct({ product }: { product: products }) {
         )}
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
           <GenericForm
-            formFields={JSON.stringify(constantFormFields)}
+            formFields={JSON.stringify(homePageFields)}
             color={text}
             bgColor={bg}
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}

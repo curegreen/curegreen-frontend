@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
 import GenericForm from "@/components/generic-form";
-import { constantFormFields } from "@/data/formItems";
+import { freeProductArchivePageFields, homePageFields } from "@/data/formItems";
 const DummyPic = "/images/dummyPic.jpeg";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
@@ -49,7 +49,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
             <ProductsArchive items={product.category} free />
             <div id="form" className="mt-20 pt-20 border-t-2 w-full">
               <GenericForm
-                formFields={JSON.stringify(constantFormFields)}
+                formFields={JSON.stringify(freeProductArchivePageFields)}
                 formTitle="Contact Us"
                 image={DummyPic}
               />
@@ -73,7 +73,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
         <ProductsArchive />
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
           <GenericForm
-            formFields={JSON.stringify(constantFormFields)}
+            formFields={JSON.stringify(homePageFields)}
             formTitle="Get Quote"
             image={DummyPic}
           />
