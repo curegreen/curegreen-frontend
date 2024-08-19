@@ -29,7 +29,24 @@ export function Header() {
       <div className="relative w-full md:hidden">
         <div className="bg-white fixed top-0 inset-x-0 z-50 h-auto rounded">
           <div className="relative w-full flex flex-col items-center justify-center">
-            <div className="w-full flex justify-center md:justify-between py-2.5 mt-0 md:px-16 items-center bg-primary-green text-white">
+            {/* blue bar */}
+            <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-[#081c47] text-white">
+              <div className="flex justify-center items-center space-x-8 text-sm">
+                {Products.slice(0, 3).map((product, index) => (
+                  <Link
+                    key={index}
+                    href={`/products/${product.link}`}
+                    className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
+                  >
+                    {product.name.length > 12
+                      ? `${product.name.slice(0, 12)}.`
+                      : product.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* green bar */}
+            <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-primary-green text-white">
               <div className="md:flex justify-center items-center gap-3 hidden">
                 <p>Contact for knowing more details</p>
                 <span>
@@ -59,17 +76,17 @@ export function Header() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <div className="w-1/3"></div>
               <div className="w-1/3 flex justify-center">
                 <HoveredLink href="/">
                   <Image
                     src={mobHeaderLogo}
                     alt={mobHeaderLogo}
-                    width={100}
-                    height={100}
+                    height={80}
+                    width={80}
                   />
                 </HoveredLink>
               </div>
+              <div className="w-1/3"></div>
               <div className="w-1/3 flex justify-end relative z-50">
                 <NavBurgerBtn toggleDrawer={toggleDrawer} state={isOpen} />
               </div>

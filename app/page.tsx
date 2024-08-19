@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="flex bg-secondary-white min-h-screen flex-col items-center justify-between">
       {/* Home Background Image */}
-      <div className="mt-14 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
+      <div className="mt-16 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
         <Image
           src={homeBg}
           alt="Landscape image"
