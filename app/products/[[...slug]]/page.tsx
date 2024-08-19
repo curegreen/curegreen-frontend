@@ -4,6 +4,10 @@ import { Products } from "@/data/products";
 import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
+import GenericForm from "@/components/generic-form";
+
+import DummyPic from "../../../public/images/dummyPic.jpeg";
+import { constantFormFields } from "@/data/formItems";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -65,6 +69,17 @@ export default function Page({ params }: { params: { slug: string[] } }) {
         </div>
         {content}
       </div>
+      <GenericForm
+        formFields={JSON.stringify(constantFormFields)}
+        color="#0B0B0B"
+        bgColor="#F5F5F5"
+        formTitle="Contact Us"
+        imageOverlayOpacity={0.28}
+        imageOverlayColor="#2E3191"
+        buttonTextColor="white"
+        buttonBgColor="#2E3191"
+        image={DummyPic}
+      />
     </>
   );
 }
