@@ -167,9 +167,22 @@ export const FreeProducts: products[] = [
     image: `${productsUrl}/In Home Display Device a.webp`,
     link: "/free-products/in-home-display-service",
     isCategory: false,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    features: "some feats",
+    description: (
+      <>
+        <p>
+          Are you looking for a way to explore our products without leaving the
+          comfort of your home?
+        </p>
+        <br />
+        <p>
+          Our in-home display service brings our product expertise directly to
+          you, allowing you to see and experience our offerings firsthand. A
+          personalized consultation ensures you find the perfect solutions
+          tailored to your needs and preferences.
+        </p>
+      </>
+    ),
+    features: "No Features",
     gallery: [
       {
         original: `${productsUrl}/In Home Display Device a.webp`,

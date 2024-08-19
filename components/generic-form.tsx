@@ -159,10 +159,10 @@ export default function GenericForm({
                   name={field.name as keyof FormInputs}
                   render={() => (
                     <FormItem
-                      className={`w-full flex flex-col ${
+                      className={`w-full flex flex-col col-span-1 ${
                         field.type === "textarea" || field.name === "address"
-                          ? "col-span-2"
-                          : "col-span-1"
+                          ? "md:col-span-2"
+                          : "md:col-span-1"
                       }`}
                     >
                       <FormLabel className="w-full text-base font-extrabold">
