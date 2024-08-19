@@ -15,6 +15,7 @@ import { GoMention } from "react-icons/go";
 import Link from "next/link";
 import NavBurgerBtn from "./ui/burger-btn";
 import Sidebar from "./sidebar";
+import { useRouter } from "next/navigation";
 
 const headerLogo = "/images/logos/headerLogo.png";
 const mobHeaderLogo = "/images/logos/CureGreen_No Bg LogoMark.png";
@@ -96,6 +97,7 @@ function Navbar({
   items: products[];
   className?: string;
 }) {
+  const router = useRouter();
   const [active, setActive] = useState<string | null>(null);
   return (
     <div className={cn("fixed top-0 inset-x-0 w-full mx-auto z-50", className)}>
@@ -141,30 +143,33 @@ function Navbar({
             >
               About Us
             </HoveredLink>
-            <MenuItem
-              setActive={setActive}
-              active={active}
-              item="Products"
-              icon={<FaChevronDown />}
-            >
-              <div className="  text-sm grid grid-cols-1 gap-10 p-4">
-                {items.map(({ id, name, shortDesc, image, link }) => (
-                  <Fragment key={id}>
-                    <ProductItem
-                      title={name}
-                      href={`/products${link}`}
-                      src={image}
-                      description={shortDesc || ""}
-                    />
-                  </Fragment>
-                ))}
-                <HoveredLink href="/products">
-                  <p className="w-full flex justify-center items-center">
+            <HoveredLink href="/products">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Products"
+                icon={<FaChevronDown />}
+              >
+                <div className="  text-sm grid grid-cols-1 gap-10 p-4">
+                  {items.map(({ id, name, shortDesc, image, link }) => (
+                    <Fragment key={id}>
+                      <ProductItem
+                        title={name}
+                        href={`/products${link}`}
+                        src={image}
+                        description={shortDesc || ""}
+                      />
+                    </Fragment>
+                  ))}
+                  <p
+                    className="w-full flex justify-center items-center"
+                    onClick={() => router.push("/products")}
+                  >
                     See more...
                   </p>
-                </HoveredLink>
-              </div>
-            </MenuItem>
+                </div>
+              </MenuItem>
+            </HoveredLink>
             <HoveredLink href="#form">
               <Button className="bg-primary-blue hover:bg-secondary-darkBlue">
                 Get a Quote
