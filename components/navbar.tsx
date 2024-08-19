@@ -118,6 +118,17 @@ function Navbar({
   return (
     <div className={cn("fixed top-0 inset-x-0 w-full mx-auto z-50", className)}>
       <Menu setActive={setActive}>
+        {/* blue bar */}
+        <div className="w-full text-xl flex justify-center py-2.5 space-x-2 items-center bg-[#081c47] text-white">
+          <h6>Claim Your Government Rebate Under VEU Right Now! </h6>
+          <Link
+            href={"#form"}
+            className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen font-extrabold"
+          >
+            Check Your Eligibility
+          </Link>
+        </div>
+        {/* green bar */}
         <div className="w-full flex justify-center md:justify-between py-2.5 mt-0 md:px-16 items-center bg-primary-green text-white">
           <div className="md:flex justify-center items-center gap-3 hidden">
             <p>Contact for knowing more details</p>
