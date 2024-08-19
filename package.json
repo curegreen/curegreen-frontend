@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/dotlottie-react": "^0.8.7",
     "@radix-ui/react-dropdown-menu": "^2.1.1",

@@ -12,6 +12,8 @@ import {
   FormMessage,
 } from "./ui/form";
 import Image, { StaticImageData } from "next/image";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 type FormFieldType = {
   name: string;
@@ -47,28 +49,33 @@ export default function GenericForm({
   image,
 }: GenericFormProps) {
   const parsedFormFields: FormFieldType[] = JSON.parse(formFields);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const formSchema = z.object(
-    parsedFormFields.reduce((acc, field) => {
-      switch (field.type) {
-        case 'text':
-        case 'email':
-        case 'tel':
-        case 'textarea':
-          acc[field.name] = z.string().nonempty(`${field.label} is required`);
-          break;
-        case 'number':
-          acc[field.name] = z.number().min(0, `${field.label} must be a positive number`);
-          break;
-        case 'select':
-          acc[field.name] = z.string().nonempty(`${field.label} is required`);
-          break;
-        default:
-          acc[field.name] = z.string();
-      }
-      return acc;
-    }, {} as Record<string, z.ZodTypeAny>)
-  );
+  const formSchema = z
+    .object(
+      parsedFormFields.reduce((acc, field) => {
+        switch (field.type) {
+          case "text":
+          case "email":
+          case "tel":
+          case "textarea":
+            acc[field.name] = z.string().nonempty(`${field.label} is required`);
+            break;
+          case "number":
+            acc[field.name] = z
+              .number()
+              .min(0, `${field.label} must be a positive number`);
+            break;
+          case "select":
+            acc[field.name] = z.string().nonempty(`${field.label} is required`);
+            break;
+          default:
+            acc[field.name] = z.string();
+        }
+        return acc;
+      }, {} as Record<string, z.ZodTypeAny>)
+    )
+    .required();
 
   type FormInputs = z.infer<typeof formSchema>;
 
@@ -80,10 +87,31 @@ export default function GenericForm({
     }, {} as Record<string, string>),
   });
 
-  const { handleSubmit, control } = formMethods;
+  const { handleSubmit, control, reset } = formMethods;
 
   const onSubmit = (data: FormInputs) => {
     console.log("Form Data:", data);
+
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_fbudjkn",
+          "template_wzg0pgc",
+          formRef.current,
+          "Ut9VhVJ4vbcyqTs6e"
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+            alert("Success");
+            reset();
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+            alert("Failed");
+          }
+        );
+    }
   };
 
   const styles = {
@@ -107,7 +135,11 @@ export default function GenericForm({
   return (
     <div className="flex w-full">
       <Form {...formMethods}>
-        <form className="w-full md:w-[60%]" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          ref={formRef}
+          className="w-full md:w-[60%]"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div
             className={`py-4 px-10 h-full flex flex-col gap-2 items-start md:py-20`}
             style={styles.formStyles}
@@ -140,16 +172,18 @@ export default function GenericForm({
                         <Controller
                           name={field.name}
                           control={control}
-                          render={({ field: controllerField }) => (
+                          render={({ field: controllerField }) =>
                             field.type === "select" ? (
                               <select
                                 {...controllerField}
                                 className="border p-2 w-full"
                                 style={styles.inputStyles}
-
                               >
                                 {field.options?.map((option) => (
-                                  <option key={option.value} value={option.value}>
+                                  <option
+                                    key={option.value}
+                                    value={option.value}
+                                  >
                                     {option.label}
                                   </option>
                                 ))}
@@ -170,7 +204,7 @@ export default function GenericForm({
                                 style={styles.inputStyles}
                               />
                             )
-                          )}
+                          }
                         />
                       </FormControl>
                       <FormMessage />
