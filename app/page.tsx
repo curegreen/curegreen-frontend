@@ -124,7 +124,7 @@ export default function Home() {
           </h2>
           <div className="flex flex-col md:flex-row items-start w-full gap-10 md:gap-0">
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <div className="relative w-[8rem] h-[8rem]">
+              <div className="relative w-full h-60 sm:w-[8rem] sm:h-[8rem]">
                 <Image
                   src={veu1}
                   alt="veu"
@@ -138,7 +138,7 @@ export default function Home() {
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <div className="relative w-[8rem] h-[8rem]">
+              <div className="relative w-full h-60 sm:w-[8rem] sm:h-[8rem]">
                 <Image
                   src={veu2}
                   alt="veu"
@@ -152,7 +152,7 @@ export default function Home() {
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5 ">
-              <div className="relative w-[8rem] h-[8rem]">
+              <div className="relative w-full h-60 sm:w-[8rem] sm:h-[8rem]">
                 <Image
                   src={veu3}
                   alt="veu"
@@ -166,7 +166,7 @@ export default function Home() {
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <div className="relative w-[8rem] h-[8rem]">
+              <div className="relative w-full h-60 sm:w-[8rem] sm:h-[8rem]">
                 <Image
                   src={veu4}
                   alt="veu"
