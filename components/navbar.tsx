@@ -31,7 +31,7 @@ export function Header() {
           <div className="relative w-full flex flex-col items-center justify-center">
             {/* blue bar */}
             <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-[#081c47] text-white">
-              <div className="flex justify-center items-center space-x-8 text-sm">
+              <div className="flex justify-center items-center space-x-8 text-sm font-heading">
                 {Products.slice(0, 3).map((product, index) => (
                   <Link
                     key={index}

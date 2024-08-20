@@ -42,24 +42,24 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.nav
-        className="flex flex-col h-full p-6 pt-40 space-y-10"
+        className="flex flex-col h-full p-6 pt-40 space-y-10 font-heading"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={listVariants}
       >
-        <motion.div variants={itemVariants} className="bg-secondary flex justify-start items-center rounded">
+        <motion.div variants={itemVariants} className="flex justify-start items-center rounded">
           <Link
             href="/#about"
-            className="w-full p-2 text-lg font-semibold hover:text-primary-green transition-colors pl-2"
+            className="w-full p-2 text-lg pl-2 text-white"
             onClick={() => toggleDrawer(false)}
           >
             About Us
           </Link>
         </motion.div>
-        <motion.div variants={itemVariants} className="bg-secondary flex justify-start items-center rounded">
+        <motion.div variants={itemVariants} className="flex justify-start items-center rounded">
           <Link
             href="/products"
-            className="w-full p-2  text-lg font-semibold hover:text-primary-green transition-colors pl-2"
+            className="w-full p-2 text-lg pl-2 text-white"
             onClick={() => toggleDrawer(false)}
           >
             Products
@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
           >
             <Button
               variant={"default"}
-              className="font-body bg-secondary-darkBlue text-secondary-white text-lg font-semibold"
+              className="bg-secondary-darkBlue text-secondary-white text-lg"
             >
               Get a Quote
             </Button>
