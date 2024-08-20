@@ -29,7 +29,7 @@ export default function Home() {
           fill
           className="object-cover object-center"
           sizes="100vw"
-          priority
+          loading="lazy"
         />
       </div>
 
@@ -83,8 +83,12 @@ export default function Home() {
                         : "data-[state=active]:text-primary-green data-[state=active]:border-b-primary-green"
                     }`}
                   >
-                    <p className="sm:hidden flex justify-center items-center py-4 w-full">{name.length > 8 ? `${name.slice(0, 8)}.` : name}</p>
-                    <p className="sm:flex hidden justify-center items-center py-4 w-full">{name}</p>
+                    <p className="sm:hidden flex justify-center items-center py-4 w-full">
+                      {name.length > 8 ? `${name.slice(0, 8)}.` : name}
+                    </p>
+                    <p className="sm:flex hidden justify-center items-center py-4 w-full">
+                      {name}
+                    </p>
                   </TabsTrigger>
                 </Fragment>
               ))}
@@ -120,49 +124,57 @@ export default function Home() {
           </h2>
           <div className="flex flex-col md:flex-row items-start w-full gap-10 md:gap-0">
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <Image
-                src={veu1}
-                alt="veu"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
+              <div className="relative w-[8rem] h-[8rem]">
+                <Image
+                  src={veu1}
+                  alt="veu"
+                  fill
+                  className="object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
               <strong className="text-lg font-body font-bold w-full px-5 text-center">
                 Save money on energy bills
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <Image
-                src={veu2}
-                alt="veu"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
+              <div className="relative w-[8rem] h-[8rem]">
+                <Image
+                  src={veu2}
+                  alt="veu"
+                  fill
+                  className="object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
               <strong className="text-lg font-body font-bold w-full px-5 text-center">
                 Government Rebates available
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5 ">
-              <Image
-                src={veu3}
-                alt="veu"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
+              <div className="relative w-[8rem] h-[8rem]">
+                <Image
+                  src={veu3}
+                  alt="veu"
+                  fill
+                  className="object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
               <strong className="text-lg font-body font-bold w-full px-5 text-center">
                 Take advantage on discounted applicances
               </strong>
             </div>
             <div className="w-full md:w-1/4 flex flex-col items-center gap-5">
-              <Image
-                src={veu4}
-                alt="veu"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
+              <div className="relative w-[8rem] h-[8rem]">
+                <Image
+                  src={veu4}
+                  alt="veu"
+                  fill
+                  className="object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
               <strong className="text-lg font-body font-bold w-full px-5 text-center">
                 Help save the environment
               </strong>

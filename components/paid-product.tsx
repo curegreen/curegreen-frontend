@@ -113,7 +113,7 @@ export default function PaidProduct({ product }: { product: products }) {
           <p className="w-full sm:w-1/2 font-body text-secondary-black text-center mb-12">
             {description}
           </p>
-          <div className="w-full flex flex-col sm:flex-row justify-evenly items-center flex-wrap gap-10">
+          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-5 sm:px-16">
             {!isCategory && sizes && (
               <SizeCard
                 sizes={sizes}
@@ -140,7 +140,7 @@ export default function PaidProduct({ product }: { product: products }) {
                 {category.map(({ id, slug, name, sizes }) => (
                   <Fragment key={slug + id}>
                     <TabsContent value={slug} className="px-5">
-                      <div className="w-full flex flex-col sm:flex-row justify-evenly items-center gap-10">
+                      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                         {sizes && (
                           <SizeCard
                             sizes={sizes}

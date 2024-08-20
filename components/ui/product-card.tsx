@@ -21,8 +21,6 @@ export default function ProductCard({
       <Link href={`/products/${link}`}>
         <div className="relative flex items-center justify-center">
           <DirectionAwareHover imageUrl={image}>
-            <p className="font-bold text-xl">Something Faltu</p>
-            <p className="font-normal text-sm">Description of Faltu</p>
           </DirectionAwareHover>
         </div>
       </Link>
