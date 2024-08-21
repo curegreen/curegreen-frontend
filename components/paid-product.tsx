@@ -7,7 +7,6 @@ import { Button } from "./ui/button";
 import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
-import GenericForm from "./generic-form";
 import { homePageFields } from "@/data/formItems";
 import ConsentForm from "./consent-form";
 const DummyPic = "/images/dummyPic.jpeg";

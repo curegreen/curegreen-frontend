@@ -4,7 +4,6 @@ import { Products } from "@/data/products";
 import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
-import GenericForm from "@/components/generic-form";
 import {
   freeProductArchivePageFields,
   homePageFields,

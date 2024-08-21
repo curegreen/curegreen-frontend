@@ -4,7 +4,6 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
-import GenericForm from "./generic-form";
 import { productPageFields } from "@/data/formItems";
 import ConsentForm from "./consent-form";
 
