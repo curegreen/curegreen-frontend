@@ -5,7 +5,12 @@ import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
 import GenericForm from "@/components/generic-form";
-import { freeProductArchivePageFields, homePageFields } from "@/data/formItems";
+import {
+  freeProductArchivePageFields,
+  homePageFields,
+  newFormFields,
+} from "@/data/formItems";
+import ConsentForm from "@/components/consent-form";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -47,10 +52,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
           <div className="space-y-5">
             <ProductsArchive items={product.category} free />
             <div id="form" className="pt-20 border-t-2 w-full">
-              <GenericForm
-                formFields={JSON.stringify(freeProductArchivePageFields)}
-                formTitle="Contact Us"
-              />
+              <ConsentForm formTitle="Contact Us" />
             </div>
           </div>
         );
@@ -70,10 +72,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       <div className="space-y-5">
         <ProductsArchive />
         <div id="form" className="pt-20 border-t-2 w-full">
-          <GenericForm
-            formFields={JSON.stringify(homePageFields)}
-            formTitle="Get Quote"
-          />
+          <ConsentForm formTitle="Get Quote" />
         </div>
       </div>
     );

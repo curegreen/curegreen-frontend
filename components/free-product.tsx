@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
 import GenericForm from "./generic-form";
 import { productPageFields } from "@/data/formItems";
+import ConsentForm from "./consent-form";
 
 export default function FreeProduct({ product }: { product: products }) {
   const { name, description, gallery, features } = product;
@@ -65,8 +66,7 @@ export default function FreeProduct({ product }: { product: products }) {
           </div>
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
-          <GenericForm
-            formFields={JSON.stringify(productPageFields)}
+          <ConsentForm
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}
           />
         </div>

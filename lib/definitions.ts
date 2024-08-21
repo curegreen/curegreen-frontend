@@ -69,3 +69,11 @@ export type formProps = {
   submitBtnValue: string;
   prefilledValues?: Record<string, string | number>;
 };
+
+
+export type FieldProps = {
+  name: string;
+  label: string;
+  type: string;
+  placeholder?: string;
+};

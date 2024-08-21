@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
 import GenericForm from "./generic-form";
 import { homePageFields } from "@/data/formItems";
+import ConsentForm from "./consent-form";
 const DummyPic = "/images/dummyPic.jpeg";
 
 export default function PaidProduct({ product }: { product: products }) {
@@ -202,8 +203,7 @@ export default function PaidProduct({ product }: { product: products }) {
           </div>
         )}
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
-          <GenericForm
-            formFields={JSON.stringify(homePageFields)}
+          <ConsentForm
             color={text}
             bgColor={bg}
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}

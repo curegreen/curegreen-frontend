@@ -1,8 +1,7 @@
-import GenericForm from "@/components/generic-form";
+import ConsentForm from "@/components/consent-form";
 import GifContentBlock from "@/components/gif-content";
 import ImageContentBlock from "@/components/image-content";
 import ProductsArchive from "@/components/products-archive";
-import { homePageFields } from "@/data/formItems";
 import { Products } from "@/data/products";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
@@ -207,8 +206,7 @@ export default function Home() {
           </ul>
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2">
-          <GenericForm
-            formFields={JSON.stringify(homePageFields)}
+          <ConsentForm
             formTitle={"Get Quote"}
             image={formPic}
           />
