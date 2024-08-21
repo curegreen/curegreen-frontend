@@ -160,7 +160,7 @@ export const newFormFields: FieldProps[] = [
   {
     name: "positiveCarbonConsent",
     label:
-      "I consent to CUREGREEN telephoning me to provide information about Split System Air Conditioning, Solar Power System and other products under the VEU programs",
+      "I consent to CUREGREEN telephoning me to provide information about Split system air conditioning, weather seals, shower roses and other products under the VEU programs",
     type: "checkbox",
   },
   {

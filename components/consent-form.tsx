@@ -159,7 +159,7 @@ export default function ConsentForm({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="font-bold w-1/2 mt-4 px-4 py-3 text-white bg-black rounded hover:opacity-90 hover:scale-90 transition-transform"
+              className="font-bold w-full md:w-1/2 mt-4 px-4 py-3 text-white bg-black rounded hover:opacity-90 hover:scale-90 transition-transform"
             >
               {isSubmitting ? (
                 <>
