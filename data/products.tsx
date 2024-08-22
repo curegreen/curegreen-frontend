@@ -208,12 +208,12 @@ export const AirConditioners: products[] = [
     sizes: [
       {
         size: "Single",
-        houseSize: "For Residential Houses",
+        houseSize: "Residential Houses",
         image: `${airUrl}/Single Split Conditioning.jpeg`,
       },
       {
         size: "Multi",
-        houseSize: "For Residential Houses",
+        houseSize: "Residential Houses",
         image: `${airUrl}/multi split system.png`,
       },
     ],
@@ -223,18 +223,13 @@ export const AirConditioners: products[] = [
     slug: "refrigerated-cooling-system",
     serviceType: false,
     name: "Refrigerated Cooling System",
-    image: `${productsUrl}/Air Vent product.webp`,
+    image: `${airUrl}/refrigerated cooling system.jpg`,
     isCategory: false,
     sizes: [
       {
-        size: "Single",
-        houseSize: "For Residential Houses",
-        image: `${productsUrl}/Air Vent product.webp`,
-      },
-      {
-        size: "Multi",
-        houseSize: "For Residential Houses",
-        image: `${productsUrl}/Air Vent product.webp`,
+        size: "Central",
+        houseSize: "Residential Houses",
+        image: `${airUrl}/refrigerated cooling system.jpg`,
       },
     ],
   },

@@ -125,7 +125,7 @@ export default function PaidProduct({ product }: { product: products }) {
           <div className="w-full md:w-3/4">
             {isCategory && category && (
               <Tabs defaultValue={category[0].slug} className="w-full">
-                <TabsList className="w-full rounded-md bg-neutral-200 p-1 mb-8">
+                <TabsList className="w-full rounded-md p-1 mb-8">
                   {category.map(({ id, slug, name }) => (
                     <Fragment key={slug + id}>
                       <TabsTrigger
