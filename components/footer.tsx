@@ -88,10 +88,10 @@ export default function Footer() {
                   <div className="flex justify-center items-center gap-2">
                     <GoMention />
                     <Link
-                      href={"mailto:infogreen@gmail.com"}
+                      href={"mailto:infocuregreen@gmail.com"}
                       className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
                     >
-                      infogreen@gmail.com
+                      infocuregreen@gmail.com
                     </Link>
                   </div>
                 </li>

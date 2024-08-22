@@ -33,7 +33,7 @@ const FormFieldComponent: React.FC<FieldItemProps> = ({
         <>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input placeholder={placeholder} type="text" {...field} />
+            <Input type="text" {...field} />
           </FormControl>
         </>
       )}
@@ -49,7 +49,6 @@ const FormFieldComponent: React.FC<FieldItemProps> = ({
           <FormLabel>{label}</FormLabel>
           <FormControl>
             <Textarea
-              placeholder={placeholder}
               className="resize-none"
               {...field}
             />

@@ -42,7 +42,7 @@ export default function Home() {
                 <p className="font-body">
                   CureGreen is dedicated to providing sustainable solutions for
                   a cleaner and greener future. Specializing in high-quality
-                  solar, water, and air purifying systems, we empower homes and
+                  solar, water, and air conditioning systems, we empower homes and
                   businesses to reduce their environmental footprint while
                   saving on energy costs. Our cutting-edge products are designed
                   to enhance the quality of life by harnessing the power of

@@ -132,7 +132,12 @@ export default function PaidProduct({ product }: { product: products }) {
                         value={slug}
                         className="w-1/2 capitalize data-[state=active]:border-2 data-[state=active]:border-b-2 rounded-md text-neutral-500 data-[state=active]:bg-white data-[state=active]:shadow-sm font-heading md:text-lg data-[state=active]:text-primary-green data-[state=active]:border-b-primary-green"
                       >
-                        {name}
+                        <p className="sm:hidden flex justify-center items-center py-4 w-full">
+                          {name.length > 16 ? `${name.slice(0, 16)}.` : name}
+                        </p>
+                        <p className="sm:flex hidden justify-center items-center py-4 w-full">
+                          {name}
+                        </p>
                       </TabsTrigger>
                     </Fragment>
                   ))}

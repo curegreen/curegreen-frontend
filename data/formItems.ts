@@ -115,31 +115,26 @@ export const newFormFields: FieldProps[] = [
     name: "firstName",
     label: "First Name",
     type: "text",
-    placeholder: "John",
   },
   {
     name: "lastName",
     label: "Last Name",
     type: "text",
-    placeholder: "Doe",
   },
   {
     name: "email",
     label: "Email",
     type: "text",
-    placeholder: "john.doe@example.com",
   },
   {
     name: "phoneNumber",
     label: "Phone Number",
     type: "text",
-    placeholder: "1234567890",
   },
   {
     name: "suburb",
     label: "Suburb",
     type: "text",
-    placeholder: "Suburbia",
   },
   {
     name: "date_and_time",
@@ -150,7 +145,6 @@ export const newFormFields: FieldProps[] = [
     name: "note",
     label: "Note",
     type: "textarea",
-    placeholder: "I would like to get a quote",
   },
   {
     name: "above18",

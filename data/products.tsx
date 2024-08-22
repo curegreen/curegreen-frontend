@@ -433,7 +433,7 @@ export const Products: products[] = [
     isCategory: true,
     category: AirConditioners,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "The cooling system is installed by replacing the ducted heating system in the house which works on gas. A fully electric cooling and heating system is then installed.",
     howItWorks: {
       header: (
         <h2 className="3xl mb-16">

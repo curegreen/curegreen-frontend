@@ -64,13 +64,13 @@ export function Header() {
                   </div>
                 </div>
                 <Link
-                  href={"mailto:infogreen@gmail.com"}
+                  href={"mailto:infocuregreen@gmail.com"}
                   className="flex justify-center items-center gap-1"
                 >
                   <span>
                     <GoMention />
                   </span>
-                  <p className="font-body">infogreen@gmail.com</p>
+                  <p className="font-body">infocuregreen@gmail.com</p>
                 </Link>
               </div>
             </div>
@@ -148,13 +148,13 @@ function Navbar({
               </div>
             </div>
             <Link
-              href={"mailto:infogreen@gmail.com"}
+              href={"mailto:infocuregreen@gmail.com"}
               className="flex justify-center items-center gap-1"
             >
               <span>
                 <GoMention className="hidden sm:block" />
               </span>
-              <p className="text-xs md:text-base">infogreen@gmail.com</p>
+              <p className="text-xs md:text-base">infocuregreen@gmail.com</p>
             </Link>
           </div>
         </div>

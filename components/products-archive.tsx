@@ -34,7 +34,7 @@ export default function ProductsArchive({
           ) : (
             <p className="font-body w-full md:w-1/2">
               CureGreen offers a range of eco-friendly products, including
-              advanced solar panels, hot water systems, and air purifiers
+              advanced solar panels, hot water systems, and air conditioners
               designed to promote sustainability and enhance the quality of life
               for residential setups
             </p>
