@@ -39,7 +39,7 @@ export default function SizeCard({
                 </p>
               )}
               <div className="flex justify-center md:justify-start items-center">
-                <Link href={"#"}>
+                <Link href={"#form"}>
                   <Button
                     variant={"default"}
                     className={cn("bg-green-500 hover:bg-green-600", btnClassName)}

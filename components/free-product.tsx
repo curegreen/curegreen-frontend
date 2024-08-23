@@ -53,7 +53,7 @@ export default function FreeProduct({ product }: { product: products }) {
               </Tabs>
             </div>
             <div className="px-5">
-              <Link href={"#"}>
+              <Link href={"#form"}>
                 <Button
                   variant={"default"}
                   className="bg-green-500 hover:bg-green-600"

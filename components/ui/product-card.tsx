@@ -28,7 +28,7 @@ export default function ProductCard({
         <h4 className="mt-2 capitalize font-bold text-xl text-black">{name}</h4>
         <div className="flex justify-around items-center">
           {free && !isCategory && (
-            <Link href={"#"}>
+            <Link href={"#form"}>
               <Button
                 variant={"default"}
                 className="bg-primary-green hover:bg-secondary-lightGreen"
