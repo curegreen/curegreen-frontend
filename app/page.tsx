@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
 import { Fragment } from "react";
 const homeUrl = "/images/Home Page";
-const homeBg = `${homeUrl}/homeBg.png`;
 const aboutUsImg = `${homeUrl}/2 About us.jpg`;
 const operator = `${homeUrl}/4 How We will Operate.jpg`;
 const veu1 = `${homeUrl}/5 why join VEU a.jpg`;
@@ -15,16 +14,28 @@ const veu2 = `${homeUrl}/5 why join VEU b.jpg`;
 const veu3 = `${homeUrl}/5 why join VEU c.jpg`;
 const veu4 = `${homeUrl}/5 why join VEU d.jpg`;
 const formPic = `${homeUrl}/6 Get Quote Collage.png`;
+const desktopImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-desktop.png`
+const mobileImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-mobile.png`
 
 export default function Home() {
   const products = Products.slice(0, 3);
   return (
     <main className="flex bg-secondary-white min-h-screen flex-col items-center justify-between">
       {/* Home Background Image */}
-      <div className="mt-16 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
+      <div className="hidden sm:block mt-20 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
         <Image
-          src={homeBg}
+          src={desktopImg}
           alt="Landscape image"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          loading="lazy"
+        />
+      </div>
+      <div className="sm:hidden mt-32 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
+        <Image
+          src={mobileImg}
+          alt="Vertical image"
           fill
           className="object-cover object-center"
           sizes="100vw"
@@ -64,6 +75,7 @@ export default function Home() {
 
         <ProductsArchive className="mb-16" header={"Services and Products"} />
 
+        {/* How it works */}
         <div className="h-full p-2 mb-16">
           <h2 className="font-heading text-5xl text-secondary-black text-center mb-8 md:mb-14">
             How It Works
