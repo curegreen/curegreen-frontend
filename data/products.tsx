@@ -321,7 +321,7 @@ export const Products: products[] = [
       ),
     },
     isCategory: false,
-    quoteImg: `${quoteUrl}/Get Quote Solar System.png`
+    quoteImg: `${quoteUrl}/Get Quote Solar System.png`,
   },
   {
     id: 2,
@@ -365,19 +365,19 @@ export const Products: products[] = [
       img: [{ original: `${waterUrl}/Why upgrading.jpg` }],
       desc: (
         <div>
-          <ul className="space-y-4">
+          <ul className="list-disc list-inside space-y-4">
             <li>
-              1. An electric hot water system is likely to be your most
-              affordable option when it comes to upfront price
+              An electric hot water system is likely to be your most affordable
+              option when it comes to upfront price
             </li>
             <li>
-              2. In the battle between gas and electric systems, electric win
-              out from an efficiency perspective.
+              In the battle between gas and electric systems, electric win out
+              from an efficiency perspective.
             </li>
-            <li>3. Comparatively safer than a conventional gas heat system</li>
+            <li>Comparatively safer than a conventional gas heat system</li>
             <li>
-              4. Since Victoria is going on renewable sources, electric hot
-              water systems are readily available
+              Since Victoria is going on renewable sources, electric hot water
+              systems are readily available
             </li>
           </ul>
         </div>
@@ -414,7 +414,7 @@ export const Products: products[] = [
         </>
       ),
     },
-    quoteImg: `${quoteUrl}/Get Quote Water System.png`
+    quoteImg: `${quoteUrl}/Get Quote Water System.png`,
   },
   {
     id: 3,
@@ -459,14 +459,14 @@ export const Products: products[] = [
       img: [{ original: `${airUrl}/duct.webp` }],
       desc: (
         <div className="mt-16">
-          <ul className="space-y-4">
-            <li>1. Better efficiency, with upgraded system</li>
+          <ul className="list-disc list-inside space-y-4">
+            <li>Better efficiency, with upgraded system</li>
             <li>
-              2. Lowers utility bills since upgraded system will get installed
+              Lowers utility bills since upgraded system will get installed
             </li>
-            <li>3. Upgrading increases the lifespan of the installed system</li>
+            <li>Upgrading increases the lifespan of the installed system</li>
             <li>
-              4. Improved performance, since old system gets wear off for coming
+              Improved performance, since old system gets wear off for coming
               years
             </li>
           </ul>
@@ -503,7 +503,7 @@ export const Products: products[] = [
         </div>
       ),
     },
-    quoteImg: `${quoteUrl}/Get Quote Air.png`
+    quoteImg: `${quoteUrl}/Get Quote Air.png`,
   },
   {
     id: 4,

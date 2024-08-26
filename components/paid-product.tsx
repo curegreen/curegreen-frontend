@@ -106,7 +106,7 @@ export default function PaidProduct({ product }: { product: products }) {
           </div>
         </div>
 
-        <div className="w-full flex flex-col items-center mb-20">
+        <div className="w-full flex flex-col items-center mb-20 px-5">
           <h1 className="font-heading text-5xl font-bold text-center mb-8">
             {name}
           </h1>
