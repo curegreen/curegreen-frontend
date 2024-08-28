@@ -110,7 +110,7 @@ export default function PaidProduct({ product }: { product: products }) {
           <h1 className="font-heading text-5xl font-bold text-center mb-8">
             {name}
           </h1>
-          <p className="w-full sm:w-1/2 font-body text-secondary-black text-center mb-12">
+          <p className="w-full sm:w-2/3 font-body text-secondary-black text-center mb-12">
             {description}
           </p>
           <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-5 sm:px-16">

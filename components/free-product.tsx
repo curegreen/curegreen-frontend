@@ -4,7 +4,6 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
-import { productPageFields } from "@/data/formItems";
 import ConsentForm from "./consent-form";
 
 export default function FreeProduct({ product }: { product: products }) {
@@ -27,7 +26,7 @@ export default function FreeProduct({ product }: { product: products }) {
           </div>
 
           {/* right col */}
-          <div className="w-full md:w-1/2 h-full flex flex-col space-y-40 py-4">
+          <div className="w-full md:w-1/2 h-full flex flex-col gap-10 py-4">
             <div className="h-full p-2">
               <Tabs defaultValue="description" className="w-full">
                 <TabsList className="w-full">
@@ -44,10 +43,10 @@ export default function FreeProduct({ product }: { product: products }) {
                     features
                   </TabsTrigger>
                 </TabsList>
-                <TabsContent value="description" className="px-5">
+                <TabsContent value="description" className="px-5 pt-4">
                   {description}
                 </TabsContent>
-                <TabsContent value="features" className="px-5">
+                <TabsContent value="features" className="px-5 pt-4">
                   {features}
                 </TabsContent>
               </Tabs>

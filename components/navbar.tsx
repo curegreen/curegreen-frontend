@@ -18,7 +18,7 @@ import Sidebar from "./sidebar";
 import { useRouter } from "next/navigation";
 
 const headerLogo = "/images/logos/headerLogo.png";
-const mobHeaderLogo = "/images/logos/CureGreen_No Bg LogoMark.png";
+// const mobHeaderLogo = "/images/logos/CureGreen_No Bg LogoMark.png";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ export function Header() {
       {/* Mobile Nav */}
       <div className="relative w-full md:hidden">
         <div className="bg-white fixed top-0 inset-x-0 z-50 h-auto rounded">
-          <div className="relative w-full flex flex-col items-center justify-center">
+          <div className="relative w-full flex flex-col items-center justify-center shadow-md">
             {/* blue bar */}
             <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-[#081c47] text-white">
               <div className="flex justify-center items-center space-x-8 text-sm font-heading">
@@ -53,13 +53,14 @@ export function Header() {
                   <FaArrowRightLong />
                 </span>
               </div>
-              <div className="flex justify-center items-center space-x-8 text-sm">
+              <div className="flex justify-center items-center flex-wrap space-x-4 text-sm">
                 <div className="flex justify-center items-center gap-2">
                   <span>
                     <FaPhoneVolume />
                   </span>
-                  <div className="flex flex-col justify-center items-center">
+                  <div className="flex justify-center items-center gap-1">
                     <Link href={"tel:0426722199"}>0426722199</Link>
+                    {" / "}
                     <Link href={"tel:0475237850"}>0475237850</Link>
                   </div>
                 </div>
@@ -75,25 +76,23 @@ export function Header() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between w-full">
-              <div className="w-1/3 flex justify-center">
+            <div className="flex items-center justify-between w-full py-1">
+              <div className="w-2/3 flex justify-start ml-5">
                 <HoveredLink href="/">
                   <Image
-                    src={mobHeaderLogo}
-                    alt={mobHeaderLogo}
-                    height={80}
-                    width={80}
+                    src={headerLogo}
+                    alt={headerLogo}
+                    height={200}
+                    width={200}
                   />
                 </HoveredLink>
               </div>
-              <div className="w-1/3"></div>
               <div className="w-1/3 flex justify-end relative z-50">
                 <NavBurgerBtn toggleDrawer={toggleDrawer} state={isOpen} />
               </div>
+              {/* nav sidebar */}
               <Sidebar isOpen={isOpen} toggleDrawer={toggleDrawer} />
             </div>
-
-            {/* nav sidebar */}
           </div>
         </div>
       </div>

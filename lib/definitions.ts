@@ -38,6 +38,7 @@ export type genericGallery = {
 export type sizes = {
   size: string;
   houseSize: string;
+  desc?: string;
   inverter?: string;
   system?: string;
   image: string;

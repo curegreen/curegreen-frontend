@@ -2,6 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import {
+  DoorSeals,
+  FreeProducts,
+  Products,
+  ShowerHeads,
+} from "@/data/products";
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -42,12 +49,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.nav
-        className="flex flex-col h-full p-6 pt-40 space-y-10 font-heading"
+        className="flex flex-col h-full p-6 pt-32 space-y-2 font-heading"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={listVariants}
       >
-        <motion.div variants={itemVariants} className="flex justify-start items-center rounded">
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-start items-center rounded"
+        >
           <Link
             href="/#about"
             className="w-full p-2 text-lg pl-2 text-white"
@@ -56,27 +66,101 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
             About Us
           </Link>
         </motion.div>
-        <motion.div variants={itemVariants} className="flex justify-start items-center rounded">
-          <Link
-            href="/products"
-            className="w-full p-2 text-lg pl-2 text-white"
-            onClick={() => toggleDrawer(false)}
+        {Products.filter((query) => !query.isCategory).map((product, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            className="flex justify-start items-center rounded"
           >
-            Products
-          </Link>
-        </motion.div>
+            <Link
+              href={`/products/${product.link}`}
+              className="w-full p-2 text-lg pl-2 text-white"
+              onClick={() => toggleDrawer(false)}
+            >
+              {product.name}
+            </Link>
+          </motion.div>
+        ))}
+        {FreeProducts.filter((query) => !query.isCategory).map(
+          (product, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="flex justify-start items-center rounded"
+            >
+              <Link
+                href={`/products/${product.link}`}
+                className="w-full p-2 text-lg pl-2 text-white"
+                onClick={() => toggleDrawer(false)}
+              >
+                {product.name}
+              </Link>
+            </motion.div>
+          )
+        )}
+        {ShowerHeads.filter((query) => !query.isCategory).map(
+          (product, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="flex justify-start items-center rounded"
+            >
+              <Link
+                href={`/products/${product.link}`}
+                className="w-full p-2 text-lg pl-2 text-white"
+                onClick={() => toggleDrawer(false)}
+              >
+                {product.name}
+              </Link>
+            </motion.div>
+          )
+        )}
+        {DoorSeals.filter((query) => !query.isCategory).map(
+          (product, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="flex justify-start items-center rounded"
+            >
+              <Link
+                href={`/products/${product.link}`}
+                className="w-full p-2 text-lg pl-2 text-white"
+                onClick={() => toggleDrawer(false)}
+              >
+                {product.name}
+              </Link>
+            </motion.div>
+          )
+        )}
         <motion.div variants={itemVariants}>
           <Link
-            href="#section2"
+            href="#form"
             className="mb-4"
             onClick={() => toggleDrawer(false)}
           >
             <Button
               variant={"default"}
-              className="bg-secondary-darkBlue text-secondary-white text-lg"
+              className="bg-secondary-white text-secondary-black text-lg"
             >
               Get a Quote
             </Button>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          className="flex w-full justify-start items-center gap-8 text-3xl h-20 text-secondary-white"
+        >
+          <Link
+            href="https://www.facebook.com/profile.php?id=61564071297621"
+            onClick={() => toggleDrawer(false)}
+          >
+            <FaFacebook />
+          </Link>
+          <Link
+            href="https://www.instagram.com/curegreen.au?igsh=ZW1tMnAzejVwczUz"
+            onClick={() => toggleDrawer(false)}
+          >
+            <FaInstagram />
           </Link>
         </motion.div>
       </motion.nav>

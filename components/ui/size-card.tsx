@@ -16,7 +16,7 @@ export default function SizeCard({
 }) {
   return (
     <>
-      {sizes.map(({ size, houseSize, inverter, system, image }, idx) => (
+      {sizes.map(({ size, houseSize, desc, inverter, system, image }, idx) => (
         <Fragment key={idx}>
           <div className="bg-white rounded-md">
             <div className="relative flex items-center justify-center">
@@ -27,7 +27,11 @@ export default function SizeCard({
               <h4 className="mt-2 capitalize font-bold text-xl text-black">
                 {title} - {size}
               </h4>
-              <p>For {houseSize} houses</p>
+              {!desc && <p>For {houseSize} houses</p>}
+              {desc && <details>
+                <summary>For {houseSize} houses</summary>
+                {desc}
+              </details>}
               {inverter && (
                 <p>
                   Inverter <strong>{inverter}</strong>

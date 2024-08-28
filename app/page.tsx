@@ -32,7 +32,7 @@ export default function Home() {
           loading="lazy"
         />
       </div>
-      <div className="sm:hidden mt-32 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
+      <div className="sm:hidden mt-20 md:mt-32 mb-16 relative w-full h-[50rem] lg:h-[60rem] overflow-clip">
         <Image
           src={mobileImg}
           alt="Vertical image"
