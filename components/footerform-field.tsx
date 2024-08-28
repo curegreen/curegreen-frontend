@@ -7,24 +7,23 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "./ui/textarea";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 type FieldItemProps = {
   field: any;
   type: string;
   label: string;
-  placeholder?: string;
 };
 
-const FormFieldComponent: React.FC<FieldItemProps> = ({
+const FooterFormFieldComponent: React.FC<FieldItemProps> = ({
   field,
   type,
   label,
-  placeholder,
 }) => {
   return (
     <FormItem
       className={`w-full flex flex-col col-span-1 ${
-        type === "textarea" || field.name === "suburb" || type === "checkbox"
+        type === "textarea" || field.name === "suburb" || type === "checkbox" || type === "radio"
           ? "md:col-span-2"
           : "md:col-span-1"
       }`}
@@ -48,10 +47,33 @@ const FormFieldComponent: React.FC<FieldItemProps> = ({
         <>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Textarea
-              className="resize-none"
-              {...field}
-            />
+            <Textarea className="resize-none" {...field} />
+          </FormControl>
+        </>
+      )}
+
+      {type === "radio" && (
+        <>
+          <FormLabel>{label}</FormLabel>
+          <FormControl>
+            <RadioGroup
+              onValueChange={field.onChange}
+              defaultValue={field.value}
+              className="flex flex-col space-y-1"
+            >
+              <FormItem className="flex items-center space-x-3 space-y-0">
+                <FormControl>
+                  <RadioGroupItem value="Yes" />
+                </FormControl>
+                <FormLabel className="font-normal">Yes</FormLabel>
+              </FormItem>
+              <FormItem className="flex items-center space-x-3 space-y-0">
+                <FormControl>
+                  <RadioGroupItem value="No" />
+                </FormControl>
+                <FormLabel className="font-normal">No</FormLabel>
+              </FormItem>
+            </RadioGroup>
           </FormControl>
         </>
       )}
@@ -74,4 +96,4 @@ const FormFieldComponent: React.FC<FieldItemProps> = ({
   );
 };
 
-export default FormFieldComponent;
+export default FooterFormFieldComponent;

@@ -8,7 +8,7 @@ import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
 import { homePageFields } from "@/data/formItems";
-import ConsentForm from "./consent-form";
+import FooterForm from "./footer-form";
 const DummyPic = "/images/dummyPic.jpeg";
 
 export default function PaidProduct({ product }: { product: products }) {
@@ -207,7 +207,7 @@ export default function PaidProduct({ product }: { product: products }) {
           </div>
         )}
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
-          <ConsentForm
+          <FooterForm
             color={text}
             bgColor={bg}
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}

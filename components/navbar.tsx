@@ -30,7 +30,7 @@ export function Header() {
         <div className="bg-white fixed top-0 inset-x-0 z-50 h-auto rounded">
           <div className="relative w-full flex flex-col items-center justify-center shadow-md">
             {/* blue bar */}
-            <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-[#081c47] text-white">
+            <div className="w-full flex justify-center md:justify-between py-1 mt-0 md:px-16 items-center bg-primary-navy text-white">
               <div className="flex justify-center items-center space-x-8 text-sm font-heading">
                 {Products.slice(0, 3).map((product, index) => (
                   <Link
@@ -118,7 +118,7 @@ function Navbar({
     <div className={cn("fixed top-0 inset-x-0 w-full mx-auto z-50", className)}>
       <Menu setActive={setActive}>
         {/* blue bar */}
-        <div className="w-full text-xl flex justify-center py-2.5 space-x-2 items-center bg-[#081c47] text-white">
+        <div className="w-full text-xl flex justify-center py-2.5 space-x-2 items-center bg-primary-navy text-white">
           <h6>Claim Your Government Rebate Under VEU Right Now! </h6>
           <Link
             href={"#form"}
@@ -169,7 +169,7 @@ function Navbar({
             >
               About Us
             </HoveredLink>
-            <HoveredLink href="/products">
+            <div onClick={() => router.push("/products")}>
               <MenuItem
                 setActive={setActive}
                 active={active}
@@ -195,7 +195,7 @@ function Navbar({
                   </p>
                 </div>
               </MenuItem>
-            </HoveredLink>
+            </div>
             <HoveredLink href="#form">
               <Button className="bg-primary-blue hover:bg-secondary-darkBlue">
                 Get a Quote

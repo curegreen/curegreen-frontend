@@ -971,3 +971,10 @@ export const Products: products[] = [
     category: FreeProducts,
   },
 ];
+
+export const AllProducts = [
+  ...Products.filter((query) => !query.isCategory),
+  ...FreeProducts.filter((query) => !query.isCategory),
+  ...ShowerHeads.filter((query) => !query.isCategory),
+  ...DoorSeals.filter((query) => !query.isCategory),
+];

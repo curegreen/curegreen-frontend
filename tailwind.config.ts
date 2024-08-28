@@ -39,6 +39,7 @@ const config = {
           blue: "#3E7FC0",
           green: "#58B447",
           yellow: "#F8DB0F",
+          navy: "#081c47",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

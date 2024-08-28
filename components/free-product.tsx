@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ui/image-carousel";
-import ConsentForm from "./consent-form";
+import FooterForm from "./footer-form";
 
 export default function FreeProduct({ product }: { product: products }) {
   const { name, description, gallery, features } = product;
@@ -64,7 +64,7 @@ export default function FreeProduct({ product }: { product: products }) {
           </div>
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2 w-full">
-          <ConsentForm
+          <FooterForm
             formTitle={product.serviceType ? "Get Quote" : "Contact Us"}
           />
         </div>

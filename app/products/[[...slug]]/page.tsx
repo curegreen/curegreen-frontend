@@ -4,12 +4,7 @@ import { Products } from "@/data/products";
 import Breadcrumbs from "@/components/dynamic-breadcrumbs";
 import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
-import {
-  freeProductArchivePageFields,
-  homePageFields,
-  newFormFields,
-} from "@/data/formItems";
-import ConsentForm from "@/components/consent-form";
+import FooterForm from "@/components/footer-form";
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -51,7 +46,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
           <div className="space-y-5">
             <ProductsArchive items={product.category} free />
             <div id="form" className="pt-20 border-t-2 w-full">
-              <ConsentForm formTitle="Contact Us" />
+              <FooterForm formTitle="Contact Us" />
             </div>
           </div>
         );
@@ -71,7 +66,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       <div className="space-y-5">
         <ProductsArchive />
         <div id="form" className="pt-20 border-t-2 w-full">
-          <ConsentForm formTitle="Get Quote" />
+          <FooterForm formTitle="Get Quote" />
         </div>
       </div>
     );

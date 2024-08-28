@@ -1,4 +1,4 @@
-import ConsentForm from "@/components/consent-form";
+import FooterForm from "@/components/footer-form";
 import GifContentBlock from "@/components/gif-content";
 import ImageContentBlock from "@/components/image-content";
 import ProductsArchive from "@/components/products-archive";
@@ -218,7 +218,7 @@ export default function Home() {
           </ul>
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2">
-          <ConsentForm
+          <FooterForm
             formTitle={"Get Quote"}
             image={formPic}
           />
