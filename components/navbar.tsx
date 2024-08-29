@@ -99,17 +99,15 @@ export function Header() {
 
       {/* Desktop Nav */}
       <div className="hidden relative w-full md:flex items-center justify-center">
-        <Navbar items={Products.slice(0, 2)} />
+        <Navbar />
       </div>
     </div>
   );
 }
 
 function Navbar({
-  items,
   className,
 }: {
-  items: products[];
   className?: string;
 }) {
   const router = useRouter();
@@ -176,8 +174,8 @@ function Navbar({
                 item="Products"
                 icon={<FaChevronDown />}
               >
-                <div className="  text-sm grid grid-cols-1 gap-10 p-4">
-                  {items.map(({ id, name, shortDesc, image, link }) => (
+                <div className="text-sm grid grid-cols-1 gap-4 p-4">
+                  {Products.map(({ id, name, shortDesc, image, link }) => (
                     <Fragment key={id}>
                       <ProductItem
                         title={name}
@@ -187,15 +185,15 @@ function Navbar({
                       />
                     </Fragment>
                   ))}
-                  <p
-                    className="w-full flex justify-center items-center"
-                    onClick={() => router.push("/products")}
-                  >
-                    See more...
-                  </p>
                 </div>
               </MenuItem>
             </div>
+            <HoveredLink
+              href="/contact"
+              scroll={false}
+            >
+              Contact Us
+            </HoveredLink>
             <HoveredLink href="#form">
               <Button className="bg-primary-blue hover:bg-secondary-darkBlue">
                 Get a Quote

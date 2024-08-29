@@ -32,7 +32,10 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
-        <div className="flex justify-center items-center">{item}{icon&&<span className="ml-2">{icon}</span>}</div>
+        <div className="flex justify-center items-center">
+          {item}
+          {icon && <span className="ml-2">{icon}</span>}
+        </div>
       </motion.div>
       {active !== null && (
         <motion.div
@@ -92,13 +95,15 @@ export const ProductItem = ({
 }) => {
   return (
     <Link href={href} className="flex space-x-2">
-      <Image
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
+      <div className="relative h-24 w-36">
+        <Image
+          src={src}
+          fill
+          loading="lazy"
+          alt={title}
+          className="flex-shrink-0 rounded-md shadow-2xl"
+        />
+      </div>
       <div>
         <h4 className="text-xl font-heading mb-1 text-black dark:text-white">
           {title}

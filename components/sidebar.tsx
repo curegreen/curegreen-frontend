@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.nav
-        className="flex flex-col h-full p-6 pt-32 space-y-2 font-heading"
+        className="flex flex-col h-full p-6 pt-28 space-y-1 font-heading"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={listVariants}
@@ -132,6 +132,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
             </motion.div>
           )
         )}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-start items-center rounded"
+        >
+          <Link
+            href="/contact"
+            className="w-full p-2 text-lg pl-2 text-white"
+            onClick={() => toggleDrawer(false)}
+          >
+            Contact Us
+          </Link>
+        </motion.div>
         <motion.div variants={itemVariants}>
           <Link
             href="#form"

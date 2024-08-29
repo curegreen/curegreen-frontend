@@ -331,7 +331,7 @@ export const Products: products[] = [
     serviceType: true,
     name: "Solar Panels",
     shortDesc:
-      "Tackle climate change and reduce your electricity bills in one go with renewable solar energy.",
+    "Cut energy costs and fight climate change with solar panels.",
     link: "/solar-panels",
     image: `${solarUrl}/Solar Product.jpg`,
     description: (
@@ -786,6 +786,7 @@ export const Products: products[] = [
     slug: "reverse-cycle-air-conditioners",
     serviceType: true,
     name: "Reverse Cycle Air Conditioners",
+    shortDesc: "Upgrade to reverse cycle air conditioners that can heat and cool.",
     link: "/reverse-cycle-air-conditioners",
     image: `${airUrl}/Single Split Conditioning.jpeg`,
     isCategory: true,
@@ -963,6 +964,7 @@ export const Products: products[] = [
   {
     id: 4,
     slug: "free-products",
+    shortDesc: "You can get these free items right now!",
     serviceType: false,
     name: "Free Products",
     link: "/free-products",
