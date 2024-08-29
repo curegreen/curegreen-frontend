@@ -19,12 +19,14 @@ export const MenuItem = ({
   item,
   icon,
   children,
+  onClick,
 }: {
   setActive: (item: string | null) => void;
   active: string | null;
   item: string;
   icon?: React.ReactElement;
   children?: React.ReactNode;
+  onClick: () => void;
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
@@ -32,7 +34,7 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center" onClick={onClick}>
           {item}
           {icon && <span className="ml-2">{icon}</span>}
         </div>

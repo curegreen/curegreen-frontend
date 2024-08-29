@@ -105,11 +105,7 @@ export function Header() {
   );
 }
 
-function Navbar({
-  className,
-}: {
-  className?: string;
-}) {
+function Navbar({ className }: { className?: string }) {
   const router = useRouter();
   const [active, setActive] = useState<string | null>(null);
   return (
@@ -167,31 +163,29 @@ function Navbar({
             >
               About Us
             </HoveredLink>
-            <div onClick={() => router.push("/products")}>
-              <MenuItem
-                setActive={setActive}
-                active={active}
-                item="Products"
-                icon={<FaChevronDown />}
-              >
-                <div className="text-sm grid grid-cols-1 gap-4 p-4">
-                  {Products.map(({ id, name, shortDesc, image, link }) => (
-                    <Fragment key={id}>
-                      <ProductItem
-                        title={name}
-                        href={`/products${link}`}
-                        src={image}
-                        description={shortDesc || ""}
-                      />
-                    </Fragment>
-                  ))}
-                </div>
-              </MenuItem>
-            </div>
-            <HoveredLink
-              href="/contact"
-              scroll={false}
+            
+            <MenuItem
+              setActive={setActive}
+              active={active}
+              item="Products"
+              icon={<FaChevronDown />}
+              onClick={() => router.push('/products')}
             >
+              <div className="text-sm grid grid-cols-1 gap-4 p-4">
+                {Products.map(({ id, name, shortDesc, image, link }) => (
+                  <Fragment key={id}>
+                    <ProductItem
+                      title={name}
+                      href={`/products${link}`}
+                      src={image}
+                      description={shortDesc || ""}
+                    />
+                  </Fragment>
+                ))}
+              </div>
+            </MenuItem>
+
+            <HoveredLink href="/contact">
               Contact Us
             </HoveredLink>
             <HoveredLink href="#form">
