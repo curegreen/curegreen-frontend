@@ -50,7 +50,7 @@ const Page = () => {
 
         <p>You can find the consent form here on below link</p>
 
-        <Link href={"#"}>
+        <Link href={"/consent"}>
           <Button
             variant="default"
             className="text-secondary-white bg-primary-navy hover:bg-secondary-darkBlue font-body text-lg font-semibold py-5 px-10"

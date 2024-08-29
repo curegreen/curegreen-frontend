@@ -12,6 +12,7 @@ import { newFormFields } from "@/data/formItems";
 const defaultImage =
   "/images/Get Quote- Contact Us Images/Get Quote Free products.png";
 import emailjs from "@emailjs/browser";
+import { useToast } from "./ui/use-toast";
 
 const formSchema = z.object({
   firstName: z.string().min(3, { message: "First name is required" }),
@@ -55,6 +56,8 @@ export default function FooterForm({
   buttonBgColor = "#0B0B0B",
   image = defaultImage,
 }: GenericFormProps) {
+
+  const { toast } = useToast()
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -100,6 +103,8 @@ export default function FooterForm({
   } = form;
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
+    toast({ description: "sending your message..." });
+
     if (formRef.current) {
       emailjs
         .sendForm(
@@ -110,13 +115,15 @@ export default function FooterForm({
         )
         .then(
           (result) => {
-            console.log("SUCCESS!", result.text);
-            alert("Success");
+            toast({
+              description: "Your message has been sent.",
+            });
             reset();
           },
           (error) => {
-            console.log("FAILED...", error.text);
-            alert("Failed");
+            toast({
+              description: "Uh oh! Something went wrong, try again.",
+            });
           }
         );
     }
@@ -125,7 +132,11 @@ export default function FooterForm({
   return (
     <div className="flex">
       <Form {...form}>
-        <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="w-full md:w-[60%]">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full md:w-[60%]"
+        >
           <div
             className={`py-4 px-10 h-full flex flex-col gap-2 items-start md:py-20`}
             style={styles.formStyles}

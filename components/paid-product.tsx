@@ -7,9 +7,7 @@ import { Button } from "./ui/button";
 import SizeCard from "./ui/size-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import GifContentBlock from "./gif-content";
-import { homePageFields } from "@/data/formItems";
 import FooterForm from "./footer-form";
-const DummyPic = "/images/dummyPic.jpeg";
 
 export default function PaidProduct({ product }: { product: products }) {
   const themeMap: {

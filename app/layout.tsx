@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const sourceSans = Source_Sans_3({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

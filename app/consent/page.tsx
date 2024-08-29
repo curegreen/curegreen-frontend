@@ -18,7 +18,7 @@ const Page = () => {
             />
           </div>
         </section>
-        <article className="bg-white w-full lg:w-1/2 p-5">
+        <article className="bg-white w-full lg:w-1/2 p-5 mb-16">
           {/* Top Bar of form */}
           <section className="flex flex-col gap-3 border-b-2 border-secondary-white py-5">
             <h1 className="font-heading text-primary-green text-5xl">

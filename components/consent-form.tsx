@@ -18,8 +18,8 @@ import { consentFormFields } from "@/data/formItems";
 import FooterFormFieldComponent from "./footerform-field";
 import { AllProducts } from "@/data/products";
 import { Checkbox } from "./ui/checkbox";
+import { useToast } from "./ui/use-toast";
 
-// Update the schema to include the selectProducts array
 const formSchema = z.object({
   firstName: z.string().min(3, { message: "First name is required" }),
   lastName: z.string().min(1, { message: "Last name is required" }),
@@ -45,6 +45,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const ConsentForm = () => {
+  const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -69,28 +70,32 @@ const ConsentForm = () => {
   } = form;
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+    toast({ description: "sending your message..." })
 
-    // if (formRef.current) {
-    //   emailjs
-    //     .sendForm(
-    //       "service_fbudjkn",
-    //       "template_wzg0pgc",
-    //       formRef.current,
-    //       "Ut9VhVJ4vbcyqTs6e"
-    //     )
-    //     .then(
-    //       (result) => {
-    //         console.log("SUCCESS!", result.text);
-    //         alert("Success");
-    //         reset();
-    //       },
-    //       (error) => {
-    //         console.log("FAILED...", error.text);
-    //         alert("Failed");
-    //       }
-    //     );
-    // }
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_fbudjkn",
+          "template_gsefjdr",
+          formRef.current,
+          "Ut9VhVJ4vbcyqTs6e"
+        )
+        .then(
+          (result) => {
+            // console.log("SUCCESS!", result.text);
+            toast({
+                description: "Your message has been sent."
+            })
+            reset();
+        },
+        (error) => {
+            // console.log("FAILED...", error.text);
+            toast({
+                description: "Uh oh! Something went wrong, try again."
+            })
+          }
+        );
+    }
   };
 
   return (
@@ -150,7 +155,7 @@ const ConsentForm = () => {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="font-bold w-full mt-4 px-4 py-3 text-white bg-black rounded hover:opacity-90 hover:scale-90 transition-transform"
+            className="font-bold w-full mt-4 px-4 py-3 text-white bg-primary-green rounded hover:bg-secondary-lightGreen hover:scale-90 transition-transform"
           >
             {isSubmitting ? (
               <>
