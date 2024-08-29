@@ -8,7 +8,7 @@ import { GoMention } from "react-icons/go";
 const Page = () => {
   return (
     <div className="sm:pt-40 pt-16 mt-16 bg-primary-navy min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-6xl mx-auto px-4 py-12">
+      <div className="w-full max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row gap-12 items-start justify-between">
           {/* Left Section */}
           <div className="w-full md:w-1/2 space-y-8 text-secondary-white">

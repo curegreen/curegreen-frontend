@@ -69,33 +69,44 @@ const ConsentForm = () => {
     reset,
   } = form;
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    toast({ description: "sending your message..." })
+  const onSubmit = (data: FormData) => {
+    // Convert boolean values to strings ("Yes" or "No")
+    const formattedData = {
+      formName: "Consent Form",
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      date_and_time: data.date_and_time,
+      above18: data.above18,
+      positiveCarbonConsent: data.positiveCarbonConsent,
+      consentValidity: data.consentValidity,
+      selectProducts: data.selectProducts.join(", "), // Convert array to string
+    };
 
-    if (formRef.current) {
-      emailjs
-        .sendForm(
-          "service_fbudjkn",
-          "template_gsefjdr",
-          formRef.current,
-          "Ut9VhVJ4vbcyqTs6e"
-        )
-        .then(
-          (result) => {
-            // console.log("SUCCESS!", result.text);
-            toast({
-                description: "Your message has been sent."
-            })
-            reset();
+    toast({ description: "Sending your message..." });
+    console.log(formattedData);
+
+    emailjs
+      .send(
+        "service_fbudjkn",
+        "template_gsefjdr",
+        formattedData,
+        "Ut9VhVJ4vbcyqTs6e"
+      )
+      .then(
+        (result) => {
+          toast({
+            description: "Your message has been sent.",
+          });
+          reset();
         },
         (error) => {
-            // console.log("FAILED...", error.text);
-            toast({
-                description: "Uh oh! Something went wrong, try again."
-            })
-          }
-        );
-    }
+          toast({
+            description: "Uh oh! Something went wrong, try again.",
+          });
+        }
+      );
   };
 
   return (

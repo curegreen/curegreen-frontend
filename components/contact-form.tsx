@@ -17,12 +17,15 @@ import { ReloadIcon } from "@radix-ui/react-icons";
 import { Checkbox } from "./ui/checkbox";
 import { AllProducts } from "@/data/products";
 import Link from "next/link";
+import { useRef } from "react";
+import { useToast } from "./ui/use-toast";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
   lastName: z.string().min(1, "Last Name is required"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  phoneNumber: z.string().min(10, "Phone number must be at least 10 digits"),
   propertyType: z
     .object({
       isResidential: z.boolean(),
@@ -36,7 +39,7 @@ const formSchema = z.object({
   selectProducts: z
     .array(z.string())
     .nonempty({ message: "Select at least one product" }),
-  consentPolicyAck: z.boolean().refine((data) => data === true, {
+  consentValidity: z.boolean().refine((data) => data === true, {
     message: "This field is required.",
   }),
 });
@@ -44,13 +47,15 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
-      phone: "",
+      phoneNumber: "",
       propertyType: {
         isResidential: false,
         isCommercial: false,
@@ -58,7 +63,7 @@ const ContactForm = () => {
       address: "",
       zipCode: "",
       selectProducts: [],
-      consentPolicyAck: true,
+      consentValidity: true,
     },
   });
 
@@ -70,8 +75,49 @@ const ContactForm = () => {
   } = form;
 
   const onSubmit = (data: FormData) => {
-    console.log("Form Submitted", data);
-    reset();
+    // Convert boolean values to strings ("Yes" or "No")
+    const formattedData = {
+      formName: "Contact Form",
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      // date_and_time: data.date_and_time,
+      propertyType: {
+        isResidential: data.propertyType.isResidential ? "Yes" : "No",
+        isCommercial: data.propertyType.isCommercial ? "Yes" : "No",
+      },
+      address: data.address,
+      zipCode: data.zipCode,
+      // above18: data.above18 ? "Yes" : "No",
+      // positiveCarbonConsent: data.positiveCarbonConsent ? "Yes" : "No",
+      consentValidity: data.consentValidity ? "Yes" : "No",
+      selectProducts: data.selectProducts.join(", "), // Convert array to string
+    };
+
+    toast({ description: "Sending your message..." });
+    console.log(formattedData);
+
+    emailjs
+      .send(
+        "service_fbudjkn",
+        "template_gsefjdr",
+        formattedData,
+        "Ut9VhVJ4vbcyqTs6e"
+      )
+      .then(
+        (result) => {
+          toast({
+            description: "Your message has been sent.",
+          });
+          reset();
+        },
+        (error) => {
+          toast({
+            description: "Uh oh! Something went wrong, try again.",
+          });
+        }
+      );
   };
 
   return (
@@ -80,7 +126,11 @@ const ContactForm = () => {
         Contact Us
       </h2>
       <Form {...form}>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-4"
+        >
           {/* Name Field */}
           <div className="flex items-center justify-between gap-4">
             <FormField
@@ -130,7 +180,7 @@ const ContactForm = () => {
             {/* Phone Field */}
             <FormField
               control={control}
-              name="phone"
+              name="phoneNumber"
               render={({ field }) => (
                 <FormItem className="w-1/2">
                   <FormLabel>Phone</FormLabel>
@@ -161,6 +211,7 @@ const ContactForm = () => {
                       </FormControl>
                       <FormLabel>Residential</FormLabel>
                     </div>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -178,6 +229,7 @@ const ContactForm = () => {
                       </FormControl>
                       <FormLabel>Commercial</FormLabel>
                     </div>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -252,7 +304,7 @@ const ContactForm = () => {
           {/* Consent */}
           <FormField
             control={control}
-            name="consentPolicyAck"
+            name="consentValidity"
             render={({ field }) => (
               <FormItem>
                 <div className="flex items-center space-x-1 leading-none">
@@ -263,7 +315,15 @@ const ContactForm = () => {
                     />
                   </FormControl>
                   <FormLabel>
-                    Yes, I read the{" "}<Link href={"/consent-policies"} className="underline text-primary-green">consent form policies</Link>{" "}and acknowledge to CureGreen contacting me to provide information about products offered under VEU program.
+                    Yes, I read the{" "}
+                    <Link
+                      href={"/consent-policies"}
+                      className="underline text-primary-green"
+                    >
+                      consent form policies
+                    </Link>{" "}
+                    and acknowledge to CureGreen contacting me to provide
+                    information about products offered under VEU program.
                   </FormLabel>
                 </div>
                 <FormMessage />
