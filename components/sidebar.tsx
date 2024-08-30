@@ -102,7 +102,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleDrawer }) => {
                 <ChevronDownIcon className="top-[1px] ml-1 h-5 w-5" />
               </Link>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="w-56 sm:w-72">
               {FreeProducts.map((product, index) => (
                 <motion.div
                   key={index}
