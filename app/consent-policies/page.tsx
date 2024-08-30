@@ -1,3 +1,4 @@
+import FooterForm from "@/components/footer-form";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
@@ -8,9 +9,9 @@ const Page = () => {
       <h2 className="w-full px-5 md:w-1/2 font-heading text-primary-navy text-3xl">
         Pre consent form policies for telemarketing under VEU
       </h2>
-      <div className="w-full px-5 md:w-1/2 flex flex-col gap-8 mb-16">
+      <div className="w-full px-5 md:w-1/2 flex flex-col gap-8">
         <p>
-          I hereby grant my express written consent for Target Green Pty Ltd to
+          I hereby grant my express written consent for CureGreen Pty Ltd to
           contact me via telephone about the activities offered under the VEU
           program.
         </p>
@@ -18,7 +19,7 @@ const Page = () => {
         <p>
           <strong>Scope of Consent: </strong>
           By providing this consent, I acknowledge that I may receive occasional
-          telemarketing calls from Target Green sales team related to
+          telemarketing calls from CureGreen sales team related to
           energy-efficient products, hot water systems, air cons and aircons.
           These calls may include information about new product launches,
           exclusive deals, and other important updates.
@@ -27,7 +28,7 @@ const Page = () => {
         <p>
           <strong>Validity & Right to Revoke: </strong>
           This consent remains effective for a period of{" "}
-          <strong>3 months</strong> from the date signed below, unless I choose
+          <strong>12 months</strong> from the date signed below, unless I choose
           to withdraw it earlier.
         </p>
 
@@ -58,6 +59,9 @@ const Page = () => {
             View Consent Form
           </Button>
         </Link>
+      </div>
+      <div id="form" className="mt-20 pt-20 border-t-2">
+        <FooterForm formTitle={"Get Quote"} />
       </div>
     </div>
   );

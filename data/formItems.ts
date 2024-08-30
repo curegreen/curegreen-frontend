@@ -50,7 +50,7 @@ export const newFormFields: FieldProps[] = [
   {
     name: "consentValidity",
     label:
-      "I understand that my consent last for three months, but I can withdraw my consent anytime.",
+      "I understand that my consent last for 12 months, but I can withdraw my consent anytime.",
     type: "checkbox",
   },
 ];

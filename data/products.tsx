@@ -8,104 +8,6 @@ const productsUrl = "/images/Products";
 const gifUrl = "/images/GIFS";
 const quoteUrl = "/images/Get Quote- Contact Us Images";
 
-export const ShowerHeads: products[] = [
-  {
-    id: 1,
-    slug: "square-wall-mount",
-    serviceType: false,
-    name: "Square Wall Mount",
-    image: `${productsUrl}/square shower head.webp`,
-    link: "/free-products/shower-heads/square-wall-mount",
-    isCategory: false,
-    description:
-      "The ERS TECH Square wall mount showerhead, with a WELS Rating of 4 and a flow rate of 7.5 Litres/minute, offers efficient water usage, ensuring a high-quality and low-maintenance shower experience.",
-    features: "No Features",
-    gallery: [
-      {
-        original: `${productsUrl}/square shower head.webp`,
-        thumbnail: `${productsUrl}/square shower head.webp`,
-      },
-      {
-        original: `${productsUrl}/square shower.webp`,
-        thumbnail: `${productsUrl}/square shower.webp`,
-      },
-    ],
-  },
-  {
-    id: 2,
-    slug: "hand-shower",
-    serviceType: false,
-    name: "Hand Shower",
-    image: `${productsUrl}/hand shower head.webp`,
-    link: "/free-products/shower-heads/hand-shower",
-    isCategory: false,
-    description:
-      "The ECO-PEM Snake Shower Rose is a 4-Star Water Efficiency Labelling and Standards (WELS) rated product using 5 jet-spray technology to deliver water-efficient shower experience.",
-    features: "No Features",
-    gallery: [
-      {
-        original: `${productsUrl}/hand shower head.webp`,
-        thumbnail: `${productsUrl}/hand shower head.webp`,
-      },
-    ],
-  },
-];
-
-export const DoorSeals: products[] = [
-  {
-    id: 1,
-    slug: "bottom-door-seal",
-    serviceType: false,
-    name: "Bottom Door Seal",
-    image: `${productsUrl}/door seal - bottom.webp`,
-    link: "/free-products/door-seals/bottom-door-seal",
-    isCategory: false,
-    description: (
-      <div>
-        Door seals are essential for a well-insulated home, preventing air,
-        water, and noise infiltration.
-        <br />
-        <br />
-        Upgrade your home with free door seal for improved energy efficiency,
-        comfort, and tranquility.
-      </div>
-    ),
-    features: "No Features",
-    gallery: [
-      {
-        original: `${productsUrl}/door seal - bottom.webp`,
-        thumbnail: `${productsUrl}/door seal - bottom.webp`,
-      },
-    ],
-  },
-  {
-    id: 2,
-    slug: "frame-door-seal",
-    serviceType: false,
-    name: "Frame Door Seal",
-    image: `${productsUrl}/Door Seal - Frame.webp`,
-    link: "/free-products/door-seals/frame-door-seal",
-    isCategory: false,
-    description: (
-      <div>
-        Door seals are essential for a well-insulated home, preventing air,
-        water, and noise infiltration.
-        <br />
-        <br />
-        Upgrade your home with free door seal for improved energy efficiency,
-        comfort, and tranquility.
-      </div>
-    ),
-    features: "No Features",
-    gallery: [
-      {
-        original: `${productsUrl}/Door Seal - Frame.webp`,
-        thumbnail: `${productsUrl}/Door Seal - Frame.webp`,
-      },
-    ],
-  },
-];
-
 export const FreeProducts: products[] = [
   {
     id: 1,
@@ -185,10 +87,86 @@ export const FreeProducts: products[] = [
     slug: "shower-heads",
     serviceType: false,
     name: "Shower Heads",
-    image: `${productsUrl}/hand shower head.webp`,
+    image: `${productsUrl}/square shower head.webp`,
     link: "/free-products/shower-heads",
-    isCategory: true,
-    category: ShowerHeads,
+    isCategory: false,
+    description: (
+      <div className="space-y-2">
+        <p>
+          Under the <strong>Victorian Energy Upgrades (VEU)</strong> program,
+          efficient shower-heads are one of the energy-saving products available
+          to households and businesses. These shower-heads are designed to
+          reduce water and energy consumption without compromising the showering
+          experience.
+        </p>
+      </div>
+    ),
+    features: (
+      <>
+        <h6 className="mt-5 mb-2 font-semibold">Features:</h6>
+        <ul className="list-disc space-y-2">
+          <li>
+            <strong>Pressure Compensation: </strong>These efficient shower-heads
+            are designed with pressure compensation features, ensuring
+            consistent water flow and pressure, even in homes with varying water
+            pressure levels.
+          </li>
+          <li>
+            <strong>Spray Patterns: </strong>These shower-heads often come with
+            adjustable spray patterns, allowing users to choose the most
+            comfortable setting while still saving water.
+          </li>
+          <li>
+            <strong>Installation: </strong>The installation process is simple
+            and straightforward, often just requiring the replacement of the
+            existing showerhead. Under the VEU program, installation is provided
+            for free, making it easy for households to upgrade.
+          </li>
+        </ul>
+        <h6 className="mt-5 mb-2 font-semibold">Benefits:</h6>
+        <ul className="list-disc space-y-2">
+          <li>
+            <strong>Water Conservation: </strong>Efficient shower-heads
+            significantly reduce the amount of water used during showers. This
+            can lead to substantial water savings, which is particularly
+            important in regions prone to drought or where water conservation is
+            a priority.
+          </li>
+          <li>
+            <strong>Energy Savings: </strong>By using less water, efficient
+            shower-heads also reduce the amount of energy required to heat
+            water. This leads to lower energy bills, especially in households
+            where hot water is a significant portion of energy consumption.
+          </li>
+          <li>
+            <strong>Cost Savings: </strong>The combination of reduced water and
+            energy usage translates to lower utility bills. Over time, the
+            savings can be substantial, making efficient shower-heads a
+            cost-effective upgrade.
+          </li>
+          <li>
+            <strong>Increased Property Value: </strong>Installing efficient
+            fixtures like shower-heads can increase the appeal of a property to
+            potential buyers who are interested in sustainability and lower
+            utility costs.
+          </li>
+        </ul>
+      </>
+    ),
+    gallery: [
+      {
+        original: `${productsUrl}/square shower head.webp`,
+        thumbnail: `${productsUrl}/square shower head.webp`,
+      },
+      {
+        original: `${productsUrl}/hand shower head.webp`,
+        thumbnail: `${productsUrl}/hand shower head.webp`,
+      },
+      {
+        original: `${productsUrl}/shower-head.jpg`,
+        thumbnail: `${productsUrl}/shower-head.jpg`,
+      },
+    ],
   },
   {
     id: 3,
@@ -197,8 +175,83 @@ export const FreeProducts: products[] = [
     name: "Door Seals (Bottom & Frame)",
     image: `${productsUrl}/Door Seal - Frame.webp`,
     link: "/free-products/door-seals",
-    isCategory: true,
-    category: DoorSeals,
+    isCategory: false,
+    description: (
+      <div className="space-y-2">
+        <p>
+          Under the <strong>Victorian Energy Upgrades (VEU)</strong> program,{" "}
+          <strong>bottom door seals</strong>
+          and <strong>frame seals</strong> are essential components used to
+          improve the energy efficiency of homes and businesses. These products
+          help seal gaps around doors, preventing drafts, and reducing energy
+          loss.
+        </p>
+      </div>
+    ),
+    features: (
+      <>
+        <h6 className="mt-5 mb-2 font-semibold">Features:</h6>
+        <ul className="list-disc space-y-2">
+          <li>
+            <strong>High-Quality Materials: </strong>Our door seals are
+            comprised of high-quality materials that will endure a long time.
+            They are intended to resist a wide range of weather conditions,
+            providing dependable protection all year.
+          </li>
+          <li>
+            <strong>Easy Installation: </strong>Installing our door seals is
+            simple and doesn't require any additional tools. Installing our
+            seals may be done swiftly and effectively.
+          </li>
+        </ul>
+        <h6 className="mt-5 mb-2 font-semibold">Benefits:</h6>
+        <ul className="list-disc space-y-2">
+          <li>
+            <strong>Energy Efficiency: </strong>By sealing gaps around doors,
+            these products help prevent drafts, which can significantly reduce
+            the amount of energy needed to heat or cool a space. This leads to
+            lower energy consumption and reduced utility bills.
+          </li>
+          <li>
+            <strong>Improved Comfort: </strong>Sealing gaps with bottom door
+            seals and frame seals helps maintain a consistent indoor
+            temperature, making living spaces more comfortable, especially
+            during extreme weather conditions.
+          </li>
+          <li>
+            <strong>Enhanced Home Insulation: </strong>These seals improve the
+            overall insulation of a home by preventing air leaks. This not only
+            makes the home more energy-efficient but also enhances the
+            effectiveness of other insulation measures.
+          </li>
+          <li>
+            <strong>Noise Reduction: </strong>Frame seals can help reduce noise
+            from outside, creating a quieter and more peaceful indoor
+            environment.
+          </li>
+          <li>
+            <strong>Pest Control: </strong>Sealing gaps around doors also helps
+            keep out insects and small pests, adding an extra layer of
+            protection for your home.
+          </li>
+          <li>
+            <strong>Moisture and Dust Prevention: </strong>Bottom door seals and
+            frame seals help prevent moisture and dust from entering the home,
+            which can contribute to a cleaner and healthier living environment.
+          </li>
+        </ul>
+      </>
+    ),
+    gallery: [
+      {
+        original: `${productsUrl}/door seal - bottom.webp`,
+        thumbnail: `${productsUrl}/door seal - bottom.webp`,
+      },
+      {
+        original: `${productsUrl}/Door Seal - Frame.webp`,
+        thumbnail: `${productsUrl}/Door Seal - Frame.webp`,
+      },
+    ],
   },
   {
     id: 4,
@@ -330,8 +383,7 @@ export const Products: products[] = [
     slug: "solar-panels",
     serviceType: true,
     name: "Solar Panels",
-    shortDesc:
-    "Cut energy costs and fight climate change with solar panels.",
+    shortDesc: "Cut energy costs and fight climate change with solar panels.",
     link: "/solar-panels",
     image: `${solarUrl}/Solar Product.jpg`,
     description: (
@@ -786,7 +838,8 @@ export const Products: products[] = [
     slug: "reverse-cycle-air-conditioners",
     serviceType: true,
     name: "Reverse Cycle Air Conditioners",
-    shortDesc: "Upgrade to reverse cycle air conditioners that can heat and cool.",
+    shortDesc:
+      "Upgrade to reverse cycle air conditioners that can heat and cool.",
     link: "/reverse-cycle-air-conditioners",
     image: `${airUrl}/Single Split Conditioning.jpeg`,
     isCategory: true,
@@ -861,7 +914,7 @@ export const Products: products[] = [
     },
     whyUpgrade: {
       header: "Benefits:",
-      img: [{ original: `${airUrl}/duct.webp` }],
+      img: [{ original: `${airUrl}/duct.jpg` }],
       desc: (
         <div className="mt-8">
           <ul className="list-disc space-y-4">
@@ -975,8 +1028,6 @@ export const Products: products[] = [
 ];
 
 export const AllProducts = [
-  ...Products.filter((query) => !query.isCategory),
-  ...FreeProducts.filter((query) => !query.isCategory),
-  ...ShowerHeads.filter((query) => !query.isCategory),
-  ...DoorSeals.filter((query) => !query.isCategory),
+  ...Products.slice(0,3),
+  ...FreeProducts,
 ];

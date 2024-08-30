@@ -80,7 +80,7 @@ export default function Footer() {
                       href={"https://maps.app.goo.gl/LzshKkAqY6PuLUf98"}
                       className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
                     >
-                      Point Cook, 3030
+                      Point Cook VIC 3030, Australia
                     </Link>
                   </div>
                 </li>
