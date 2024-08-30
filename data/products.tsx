@@ -73,8 +73,8 @@ export const FreeProducts: products[] = [
         thumbnail: `${productsUrl}/Air vent.webp`,
       },
       {
-        original: `${productsUrl}/vent-cover1.jpg`,
-        thumbnail: `${productsUrl}/vent-cover1.jpg`,
+        original: `${productsUrl}/vent-cover1(square).jpg`,
+        thumbnail: `${productsUrl}/vent-cover1(square).jpg`,
       },
       {
         original: `${productsUrl}/Air Vent product.webp`,
