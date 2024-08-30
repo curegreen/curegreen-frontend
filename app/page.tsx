@@ -14,8 +14,8 @@ const veu2 = `${homeUrl}/5 why join VEU b.jpg`;
 const veu3 = `${homeUrl}/5 why join VEU c.jpg`;
 const veu4 = `${homeUrl}/5 why join VEU d.jpg`;
 const formPic = `${homeUrl}/6 Get Quote Collage.png`;
-const desktopImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-desktop.png`
-const mobileImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-mobile.png`
+const desktopImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-desktop.png`;
+const mobileImg = `${homeUrl}/city-with-eco-concept-elements-vector-illustration-mobile.png`;
 
 export default function Home() {
   const products = Products.slice(0, 3);
@@ -51,19 +51,27 @@ export default function Home() {
             content={
               <>
                 <p className="font-body">
-                  CureGreen is dedicated to providing sustainable solutions for
-                  a cleaner and greener future. Specializing in high-quality
-                  solar, water, and air conditioning systems, we empower homes and
-                  businesses to reduce their environmental footprint while
-                  saving on energy costs. Our cutting-edge products are designed
-                  to enhance the quality of life by harnessing the power of
-                  nature.
+                  CureGreen is an energy saving company dedicated to enhancing
+                  the efficiency of residential and business spaces through
+                  innovative eco-friendly solutions. Based in Victoria
+                  Australia, our core mission is to reduce the energy
+                  consumption and lower utility costs while contributing to a
+                  sustainable future. Our cutting-edge products are designed to
+                  enhance the quality of life by harnessing the power of nature.
                 </p>
                 <br />
                 <p>
-                  To learn more about how CureGreen can help you achieve your
-                  sustainability goals, contact us today for a personalized
-                  Contact Us tailored to your needs.
+                  At CureGreen we are committed to delivering sustainable energy
+                  solutions that create a positive impact on homes, businesses
+                  and the environment.
+                </p>
+                <br />
+                <p>
+                  Empowering you to save energy and cut costs with the Victoria
+                  Energy Upgrades (VEU) program! We offer expert advice,
+                  seamless service, and access to energy-efficient products
+                  through our network of Accredited Providers. Save energy, save
+                  money, and create a more sustainable world together!
                 </p>
               </>
             }
@@ -218,10 +226,7 @@ export default function Home() {
           </ul>
         </div>
         <div id="form" className="mt-20 pt-20 border-t-2">
-          <FooterForm
-            formTitle={"Get Quote"}
-            image={formPic}
-          />
+          <FooterForm formTitle={"Get Quote"} image={formPic} />
         </div>
       </div>
     </main>

@@ -116,7 +116,7 @@ export default function Footer() {
             href="/"
             className="hover:translate-y-1 duration-500 ease-in-out transition-transform hover:text-secondary-lightGreen"
           >
-            CureGreen.com
+            CureGreen.com.au
           </Link>
         </div>
       </footer>

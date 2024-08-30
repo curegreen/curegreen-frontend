@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { useToast } from "./ui/use-toast";
 import emailjs from "@emailjs/browser";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
@@ -34,11 +35,12 @@ const formSchema = z.object({
     .refine((data) => data.isResidential || data.isCommercial, {
       message: "You must choose at least one: Residential or Commercial",
     }),
-  address: z.string().min(3),
+  address: z.string(),
   zipCode: z.string().min(4),
   selectProducts: z
     .array(z.string())
     .nonempty({ message: "Select at least one product" }),
+  message: z.string(),
   consentValidity: z.boolean().refine((data) => data === true, {
     message: "This field is required.",
   }),
@@ -63,6 +65,7 @@ const ContactForm = () => {
       address: "",
       zipCode: "",
       selectProducts: [],
+      message: "",
       consentValidity: true,
     },
   });
@@ -82,21 +85,18 @@ const ContactForm = () => {
       lastName: data.lastName,
       email: data.email,
       phoneNumber: data.phoneNumber,
-      // date_and_time: data.date_and_time,
       propertyType: {
         isResidential: data.propertyType.isResidential ? "Yes" : "No",
         isCommercial: data.propertyType.isCommercial ? "Yes" : "No",
       },
       address: data.address,
       zipCode: data.zipCode,
-      // above18: data.above18 ? "Yes" : "No",
-      // positiveCarbonConsent: data.positiveCarbonConsent ? "Yes" : "No",
       consentValidity: data.consentValidity ? "Yes" : "No",
       selectProducts: data.selectProducts.join(", "), // Convert array to string
+      message: data.message,
     };
 
     toast({ description: "Sending your message..." });
-    console.log(formattedData);
 
     emailjs
       .send(
@@ -300,6 +300,20 @@ const ContactForm = () => {
               )}
             />
           ))}
+
+          <FormField
+            control={control}
+            name="message"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea className="resize-none" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
           {/* Consent */}
           <FormField
