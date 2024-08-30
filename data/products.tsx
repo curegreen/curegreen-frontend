@@ -363,7 +363,7 @@ export const AirConditioners: products[] = [
     id: 2,
     slug: "refrigerated-cooling-system",
     serviceType: false,
-    name: "Refrigerated Cooling System",
+    name: "Refrigerated Heating/Cooling System",
     image: `${airUrl}/refrigerated cooling system.jpg`,
     isCategory: false,
     sizes: [
