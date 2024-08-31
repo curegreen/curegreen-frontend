@@ -756,14 +756,13 @@ export const Products: products[] = [
               </h4>
               <ul className="list-circle ml-5">
                 <li>
-                  <strong>Hot Water Heat Pumps:</strong> Due to their
-                  efficiency, they consume less electricity, leading to lower
-                  energy bills, especially when combined with renewable energy
-                  sources like solar power.
+                  <strong>Hot Water Heat Pumps:</strong> They have a lower
+                  carbon footprint, especially when powered by renewable energy,
+                  as they don&apos;t rely on burning fossil fuels.
                 </li>
                 <li>
-                  <strong>Gas Hot Water Systems:</strong> Gas prices can be
-                  volatile, and gas systems are generally more expensive to run.
+                  <strong>Gas Hot Water Systems:</strong> They emit greenhouse
+                  gases and contribute to climate change.
                 </li>
               </ul>
             </li>
@@ -773,14 +772,15 @@ export const Products: products[] = [
               </h4>
               <ul className="list-circle ml-5">
                 <li>
-                  <strong>Hot Water Heat Pumps:</strong> Due to their
-                  efficiency, they consume less electricity, leading to lower
-                  energy bills, especially when combined with renewable energy
-                  sources like solar power.
+                  <strong>Hot Water Heat Pumps:</strong> Under the Victorian
+                  Energy Upgrades (VEU) program, homeowners may be eligible for
+                  rebates and incentives to install energy-efficient heat pumps,
+                  reducing the upfront cost.
                 </li>
                 <li>
-                  <strong>Gas Hot Water Systems:</strong> Gas prices can be
-                  volatile, and gas systems are generally more expensive to run.
+                  <strong>Gas Hot Water Systems:</strong> They generally do not
+                  qualify for such incentives, making them a less attractive
+                  option financially.
                 </li>
               </ul>
             </li>
@@ -1027,7 +1027,4 @@ export const Products: products[] = [
   },
 ];
 
-export const AllProducts = [
-  ...Products.slice(0,3),
-  ...FreeProducts,
-];
+export const AllProducts = [...Products.slice(0, 3), ...FreeProducts];
