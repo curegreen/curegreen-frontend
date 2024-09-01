@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     url: "https://curegreen.com.au",
     images: [
       {
-        url: "/images/opengraph.png",
+        url: "/images/dummyPic.jpeg",
         width: 1200,
         height: 630,
         alt: "CureGreen",
       },
       {
-        url: "/images/dummyPic.jpeg",
+        url: "/images/opengraph.png",
         width: 1200,
         height: 630,
         alt: "CureGreen",
