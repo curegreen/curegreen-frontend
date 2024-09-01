@@ -17,12 +17,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Contact",
       },
-      {
-        url: "/images/dummyPic.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "CureGreen",
-      },
     ]
   }
 };
