@@ -2,9 +2,62 @@ import React from "react";
 import ProductsArchive from "@/components/products-archive";
 import { Products } from "@/data/products";
 import Breadcrumbs from "@/components/dynamic-breadcrumbs";
-import { products } from "@/lib/definitions";
 import ProductDetailsPage from "@/components/product-detail";
 import FooterForm from "@/components/footer-form";
+import { findProduct } from "@/lib/utils";
+import { Metadata, ResolvingMetadata } from "next";
+import ProductNotFound from "@/components/product-not-found";
+let imageUrl = "/images/dummyPic.jpeg";
+
+type Props = {
+  params: { slug: string[] };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = params || [];
+  let title = "Products";
+  let description = "Explore our range of products.";
+
+  if (slug?.length) {
+    // If there's a slug, find the relevant product or category
+    const product = findProduct(slug, Products);
+
+    if (product) {
+      if (product.isCategory && product.category && !product.serviceType) {
+        // Category page
+        title = `${product.name}`;
+        description = `Browse items in the ${product.name} category.`;
+      } else {
+        // Single product page
+        title = product.name;
+        description = `Learn more about ${product.name}.`;
+        imageUrl = product.image || imageUrl;
+      }
+    } else {
+      // If no product or category is found, fallback metadata
+      title = "Product not found";
+      description = "Sorry, the product you are looking for is not available.";
+    }
+  } else {
+    title = "Products";
+    description = "Browse items in the Services & Products category.";
+  }
+
+  // Access parent metadata to extend or merge
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title,
+    description,
+    openGraph: {
+      images: [imageUrl, ...previousImages],
+    },
+  };
+}
 
 export default function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = params || {};
@@ -12,28 +65,6 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     ? `/products/${slug.join("/")}`
     : "/products";
   let content;
-
-  const findProduct = (
-    slugArray: string[],
-    productsArray: products[]
-  ): products | undefined => {
-    if (!slugArray.length) return undefined;
-    const [currentSlug, ...remainingSlugs] = slugArray;
-    const product = productsArray.find((prod) => prod.slug === currentSlug);
-
-    if (product) {
-      if (product.serviceType) return product;
-      else if (
-        remainingSlugs.length &&
-        product.isCategory &&
-        product.category
-      ) {
-        return findProduct(remainingSlugs, product.category);
-      }
-    } else return undefined;
-
-    return product;
-  };
 
   if (slug?.length) {
     // Find the product based on the slug
@@ -58,7 +89,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       }
     } else {
       // If no product is found, render a default or error component
-      content = <div>Product not found</div>;
+      content = <ProductNotFound />;
     }
   } else {
     // If slug length is 0, render the ProductsArchive component

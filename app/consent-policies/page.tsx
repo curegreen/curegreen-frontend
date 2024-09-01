@@ -1,7 +1,12 @@
 import FooterForm from "@/components/footer-form";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Consent Policies",
+};
 
 const Page = () => {
   return (

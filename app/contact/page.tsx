@@ -1,9 +1,31 @@
 import ContactForm from "@/components/contact-form";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { GoMention } from "react-icons/go";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with us",
+  openGraph: {
+    images: [
+      {
+        url: "/images/contact.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact",
+      },
+      {
+        url: "/images/dummyPic.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "CureGreen",
+      },
+    ]
+  }
+};
 
 const Page = () => {
   return (

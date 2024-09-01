@@ -1,8 +1,14 @@
 import ConsentForm from "@/components/consent-form";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
 const topLogo = "/images/logos/headerLogo.png";
+
+export const metadata: Metadata = {
+  title: "Consent",
+};
+
 const Page = () => {
   return (
     <div className="pt-40 mt-16 bg-secondary-white">
